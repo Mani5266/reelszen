@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+import { PRICING } from '../data/pricing';
+const bookable = PRICING.filter(p => !p.custom);
+---
+<Base title="Book Your Date — ReelsZen Hyderabad | Request in 3 minutes" description="Pick occasion, date and package, send a booking request on WhatsApp. No payment today — we confirm availability within hours.">
+<section class="bg-ivory text-char pt-[110px] pb-20 min-h-screen"><div class="max-w-2xl mx-auto px-5">
+  <span class="text-xs font-extrabold tracking-[3px] uppercase text-[#9a7a2e]">— Booking · under 3 min</span>
+  <h1 id="btitle" class="font-serif-d mt-2 mb-4" style="font-size:clamp(28px,4.5vw,42px)">Occasion &amp; package</h1>
+  <div class="flex gap-1.5 mb-6" id="sbar">{[0,1,2,3,4].map(i => <i data-b={i} class="flex-1 h-[5px] rounded bg-char/10"></i>)}</div>
+
+  <div data-step="1">
+    <p class="text-sm text-char/60 mb-3">What are we celebrating?</p>
+    <div class="grid gap-3 sm:grid-cols-2" id="occPick">
+      {['Wedding','Haldi / Mehendi / Sangeet','Birthday / Private','Business / Brand'].map((o,i) => <button data-occ={o} class:list={['text-left border-2 rounded-2xl p-4.5 p-4 bg-white min-h-[64px]', i===0 ? 'border-marigold bg-[#FFF8EC]' : 'border-char/10'] }><b class="block text-[15.5px]">{o}</b></button>)}
+    </div>
+    <p class="text-sm text-char/60 mt-6 mb-3">Pick your package — <b>one price everywhere:</b></p>
+    <div class="grid gap-3 sm:grid-cols-2" id="pkgPick">
+      {bookable.map(p => <button data-p={p.id} data-active={p.id==='wed1'} class="pkgbtn text-left border-2 rounded-2xl p-4 bg-white min-h-[64px] border-char/10"><b class="block text-[15px]">{p.name}</b><small class="text-[13px] text-char/60">{p.blurb}</small><span class="block font-extrabold text-[#9a7a2e] mt-1">Rs. {p.price.toLocaleString('en-IN')} · reserve Rs. {p.adv.toLocaleString('en-IN')}</span></button>)}
+    </div>
+  </div>
+
+  <div data-step="2" class="hidden">
+    <p class="text-sm text-char/60">Pick your date — <b>greyed dates are full.</b></p>
+    <div class="flex justify-between items-center mt-3"><button id="calPrev" class="px-4 py-2.5 rounded-full border border-char/15 font-extrabold min-h-[44px]">←</button><b id="calLabel" class="font-serif-d text-xl"></b><button id="calNext" class="px-4 py-2.5 rounded-full border border-char/15 font-extrabold min-h-[44px]">→</button></div>
+    <div id="calGrid" class="grid grid-cols-7 gap-1 sm:gap-2 mt-3"></div>
+    <p id="calNote" class="text-[13px] text-brick font-bold mt-2 min-h-[20px]"></p>
+    <label class="block text-[13px] font-extrabold mt-2">Venue / area<input id="bVenue" placeholder="e.g. Jubilee Hills" class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5] min-h-[52px]" /></label>
+  </div>
+
+  <div data-step="3" class="hidden">
+    <label class="block text-[13px] font-extrabold">Your name<input id="bName" placeholder="e.g. Ananya & Arjun" class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5] min-h-[52px]" /></label>
+    <label class="block text-[13px] font-extrabold mt-3">WhatsApp number (10-digit)<input id="bPhone" inputmode="numeric" maxlength="10" placeholder="98765 43210" class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5] min-h-[52px]" /></label>
+    <label class="block text-[13px] font-extrabold mt-3">Notes<textarea id="bNotes" rows="3" placeholder="Couple names, must-not-miss moments…" class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5]"></textarea></label>
+  </div>
+
+  <div data-step="4" class="hidden">
+    <div id="sumBox" class="bg-white border border-char/10 rounded-2xl p-5"></div>
+    <label class="flex gap-3 bg-[#FFF8EC] border border-gold/40 rounded-xl p-3.5 text-[13.5px] mt-3"><input type="checkbox" id="policyOk" class="w-[22px] h-[22px] flex-none" /><span>I agree to the Cancellation &amp; Reschedule policy — my date is confirmed on WhatsApp, and the advance locks it then.</span></label>
+  </div>
+
+  <div data-step="5" class="hidden">
+    <div id="reqPane"><div id="reqSum" class="bg-white border border-char/10 rounded-2xl p-5 mb-4"></div>
+      <button id="reqBtn" class="btn-cta w-full justify-center !text-[17px]">Send booking request →</button>
+      <p class="text-xs text-taupe text-center mt-2">No payment today — your request opens in WhatsApp, you hit send, we confirm availability within hours on booking days.</p></div>
+    <div id="donePane" class="hidden text-center py-4"><div class="text-6xl">✨</div><h3 class="font-serif-d text-3xl mt-2">Request sent. Talk soon.</h3><p id="doneId" class="font-extrabold text-[#9a7a2e] my-2"></p><p id="doneDetail" class="text-sm text-char/70"></p><a id="doneWa" target="_blank" rel="noopener" class="btn-cta mt-5">Chat on WhatsApp →</a></div>
+  </div>
+
+  <div class="flex gap-3 mt-6"><button id="stepBack" class="px-6 py-3.5 rounded-full border-[1.5px] border-char/15 font-extrabold min-h-[52px] invisible">← Back</button><button id="stepNext" class="btn-cta flex-1 justify-center">Continue →</button></div>
+</div></section>
+<script define:vars={{ bookable }}>
+  let step = 1, selPkg = new URLSearchParams(location.search).get('package') || 'wed1';
+  let selDate = null, selOcc = 'Wedding';
+  if (!bookable.some(p => p.id === selPkg)) selPkg = 'wed1';
+  const blocked = JSON.parse(localStorage.getItem('rz_blocked') || '["2026-11-14","2026-12-05"]');
+  const $ = s => document.querySelector(s);
+  const pkg = () => bookable.find(p => p.id === selPkg);
+  const inr = n => 'Rs. ' + Number(n).toLocaleString('en-IN');
+  const TITLES = { 1: 'Occasion & package', 2: 'Date & venue', 3: 'Your details', 4: 'Price summary', 5: 'Send request' };
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbx9FW4H9OXdxC0di7iJ0MZL8kwMYfAPxx8u5RsF0Ml_wt1oGSokqsdf8kvWaQv10yyd/exec';
+  let vy = new Date().getFullYear(), vm = new Date().getMonth();
+
+  function paintPkgs() { document.querySelectorAll('.pkgbtn').forEach(b => {
+    const on = b.dataset.p === selPkg;
+    b.style.borderColor = on ? '#E07B24' : ''; b.style.background = on ? '#FFF8EC' : '';
+  }); }
+  paintPkgs();
+  document.getElementById('pkgPick')?.addEventListener('click', e => {
+    const b = e.target.closest('[data-p]'); if (!b) return; selPkg = b.dataset.p; paintPkgs();
+  });
+  document.getElementById('occPick')?.addEventListener('click', e => {
+    const b = e.target.closest('[data-occ]'); if (!b) return; selOcc = b.dataset.occ;
+    document.querySelectorAll('#occPick button').forEach(x => { x.style.borderColor = x === b ? '#E07B24' : ''; x.style.background = x === b ? '#FFF8EC' : ''; });
+    if (selOcc === 'Business / Brand') { location.href = '/contact'; }
+  });
+
+  function show() {
+    document.querySelectorAll('[data-step]').forEach(s => s.classList.toggle('hidden', +s.dataset.step !== step));
+    document.querySelectorAll('#sbar i').forEach((b, i) => b.className = 'flex-1 h-[5px] rounded ' + (i < step - 1 ? 'bg-gold' : i === step - 1 ? 'bg-marigold' : 'bg-char/10'));
+    $('#btitle').textContent = TITLES[step];
+    $('#stepBack').style.visibility = step === 1 ? 'hidden' : 'visible';
+    $('#stepNext').textContent = step === 4 ? 'Review request →' : step === 5 ? 'Done' : 'Continue →';
+    if (step === 2) renderCal(); if (step === 4) renderSum(); if (step === 5) renderReq();
+  }
+  function ok(n) {
+    if (n === 2 && !selDate) { $('#calNote').textContent = 'Pick a free date first — or WhatsApp us for the waitlist.'; return false; }
+    if (n === 2 && !$('#bVenue').value.trim()) { $('#calNote').textContent = 'Add your venue / area.'; return false; }
+    if (n === 3 && $('#bName').value.trim().length < 2) { alert('Tell us your name'); return false; }
+    if (n === 3 && !/^[6-9]\d{9}$/.test($('#bPhone').value.replace(/\D/g, ''))) { alert('Enter a valid 10-digit mobile'); return false; }
+    if (n === 4 && !$('#policyOk').checked) { alert('Please accept the policy to continue'); return false; }
+    return true;
+  }
+  $('#stepNext').onclick = () => { if (step < 5) { if (!ok(step)) return; step++; show(); } else location.href = '/'; };
+  $('#stepBack').onclick = () => { if (step > 1) { step--; show(); } };
+
+  function renderCal() {
+    const first = new Date(vy, vm, 1), days = new Date(vy, vm + 1, 0).getDate();
+    $('#calLabel').textContent = first.toLocaleString('en-IN', { month: 'long', year: 'numeric' });
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    let h = ''; for (let i = 0; i < first.getDay(); i++) h += '<span></span>';
+    for (let d = 1; d <= days; d++) {
+      // local ISO on purpose: toISOString() shifts IST midnight to the previous UTC day
+      const iso = vy + '-' + String(vm + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+      const dis = new Date(vy, vm, d) < today || blocked.includes(iso);
+      h += `<button data-d="${iso}" ${dis ? 'disabled' : ''} style="aspect-ratio:.86;border-radius:10px;border:1.5px solid ${selDate === iso ? '#241E1A' : 'rgba(36,30,26,.12)'};background:${selDate === iso ? '#241E1A' : '#fff'};color:${selDate === iso ? '#fff' : '#241E1A'};font-weight:700;font-size:13px;min-height:44px;${dis ? 'opacity:.3;text-decoration:line-through' : ''}">${d}</button>`;
+    }
+    $('#calGrid').innerHTML = h;
+  }
+  $('#calGrid').addEventListener('click', e => { const c = e.target.closest('[data-d]'); if (!c || c.disabled) return; selDate = c.dataset.d; $('#calNote').textContent = ''; renderCal(); });
+  $('#calPrev').onclick = () => { vm--; if (vm < 0) { vm = 11; vy--; } renderCal(); };
+  $('#calNext').onclick = () => { vm++; if (vm > 11) { vm = 0; vy++; } renderCal(); };
+
+  function renderSum() {
+    const p = pkg(), gst = Math.round(p.price * 0.18), total = p.price + gst;
+    $('#sumBox').innerHTML = `<div class="flex justify-between py-1.5 text-[14.5px]"><span>${p.name} · ${selOcc} · ${selDate || '—'}</span><b>${inr(p.price)}</b></div><div class="flex justify-between py-1.5 text-[14.5px]"><span>GST (18%)</span><span>${inr(gst)}</span></div><div class="flex justify-between py-2 font-extrabold text-[17px] border-t border-char/10 mt-2 pt-3"><span>Total</span><span>${inr(total)}</span></div><div class="flex justify-between py-1.5 text-[#9a7a2e] font-extrabold"><span>Advance to lock (on confirmation)</span><span>${inr(p.adv)}</span></div><div class="flex justify-between py-1.5 text-[14.5px]"><span>Balance before shoot</span><span>${inr(total - p.adv)}</span></div>`;
+  }
+  function renderReq() {
+    const p = pkg(), total = p.price + Math.round(p.price * 0.18);
+    $('#reqSum').innerHTML = `<div class="flex justify-between text-[15px]"><span>Requesting</span><b>${p.name}</b></div><div class="flex justify-between text-sm mt-1"><span>When · where</span><span>${selDate} · ${$('#bVenue').value}</span></div><div class="flex justify-between text-sm mt-1"><span>Estimate total</span><span>${inr(total)} (advance ${inr(p.adv)} on confirmation)</span></div>`;
+    $('#reqPane').classList.remove('hidden'); $('#donePane').classList.add('hidden');
+  }
+  $('#reqBtn').onclick = () => {
+    const p = pkg(), total = p.price + Math.round(p.price * 0.18);
+    const id = 'RZ-' + new Date().getFullYear() + '-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+    const msg = `Hi ReelsZen! Booking request ${id}\nName: ${$('#bName').value}\nPhone: ${$('#bPhone').value}\nOccasion: ${selOcc}\nPackage: ${p.name} (${inr(p.price)} + GST)\nDate: ${selDate}\nVenue: ${$('#bVenue').value}\nNotes: ${$('#bNotes').value || '—'}`;
+    open('https://wa.me/919182667127?text=' + encodeURIComponent(msg), '_blank');
+    // log to Google Sheet (silent — WhatsApp is the primary path, sheet is the backup ledger)
+    if (SHEET_URL) {
+      fetch(SHEET_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ id, name: $('#bName').value, phone: $('#bPhone').value, occasion: selOcc, pkg: p.name, price: p.price, adv: p.adv, date: selDate, venue: $('#bVenue').value, notes: $('#bNotes').value, source: 'website' })
+      }).catch(() => {});
+    }
+    $('#reqPane').classList.add('hidden'); $('#donePane').classList.remove('hidden');
+    $('#doneId').textContent = 'Request ID: ' + id;
+    $('#doneDetail').textContent = `${$('#bName').value || 'Guest'} · ${p.name} · ${selDate} · ${$('#bVenue').value}. Your date is requested, not locked — we confirm availability on WhatsApp within hours.`;
+    $('#doneWa').href = 'https://wa.me/919182667127?text=' + encodeURIComponent(`Hi ReelsZen! Following up on request ${id} — ${p.name} on ${selDate}.`);
+  };
+  show();
+</script>
+</Base>

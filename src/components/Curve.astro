@@ -1,0 +1,20 @@
+---
+// Silk-drape section divider. from = previous section color, to = next section color.
+// valley: previous color dips down at center. flip/peak: next color rises at center.
+// Alternate them down the page for a wave rhythm — never stack two identical curves.
+interface Props { from: string; to: string; flip?: boolean }
+const { from, to, flip = false } = Astro.props;
+---
+{flip ? (
+  <div style={`background:${from}`} aria-hidden="true">
+    <svg class="block w-full h-[90px] sm:h-[150px]" viewBox="0 0 1440 168" preserveAspectRatio="none">
+      <path fill={to} d="M0,168H1440V104C1180,104 1060,0 720,0C380,0 260,104 0,104Z" />
+    </svg>
+  </div>
+) : (
+  <div style={`background:${to}`} aria-hidden="true">
+    <svg class="block w-full h-[90px] sm:h-[150px]" viewBox="0 0 1440 168" preserveAspectRatio="none">
+      <path fill={from} d="M0,0H1440V64C1180,64 1060,168 720,168C380,168 260,64 0,64Z" />
+    </svg>
+  </div>
+)}

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ReelsZen — Instant Wedding Reel Maker in Hyderabad | Reel Tonight, Not in 2 Months</title>
+<meta name="description" content="ReelsZen Hyderabad — Your wedding reel. Delivered before the celebration ends. Shot on iPhone, edited on-site. Reels from Rs. 1,999. Book your date in 3 minutes.">
+<meta name="theme-color" content="#0E0D0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230E0D0B'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23C9A24B' font-family='serif' font-weight='700'>R</text></svg>">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"ReelsZen","slogan":"Your wedding reel. Delivered before the celebration ends.","areaServed":"Hyderabad, Telangana","priceRange":"Rs. 1,999 - Rs. 59,999","sameAs":["https://www.instagram.com/reelszen_"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will my reel really be ready the same day?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your first reel is edited on-site and delivered before the event ends — while everyone is still together."}},{"@type":"Question","name":"Is shooting on iPhone good enough for a wedding?","acceptedAnswer":{"@type":"Answer","text":"Your photographer crafts the long film. ReelsZen is the missing piece — vertical, cinematic, made for sharing tonight. Shot on iPhone, graded cinematically."}},{"@type":"Question","name":"Do I get raw footage?","acceptedAnswer":{"@type":"Answer","text":"Yes — raw footage is included on all wedding plans. We state it proudly."}}]}
+</script>
+<style>
+/* ============ MIDNIGHT ZEN TOKENS ============ */
+:root{
+  --ink:#0E0D0B; --ink2:#161410; --ink3:#1E1B16;
+  --ivory:#F7F2EA; --ivory2:#EFE7D8; --ivory-dim:#EAE1D0;
+  --gold:#C9A24B; --gold-light:#E8CB85; --marigold:#E07B24;
+  --sage:#5B6B5A; --sage-soft:#E8ECE3; --brick:#B3402A;
+  --char:#241E1A; --taupe:#8A7D6B;
+  --cta:linear-gradient(135deg,#C9A24B 0%,#E07B24 100%);
+  --glass-dark:rgba(20,18,14,.55); --glass-line:rgba(201,162,75,.22);
+  --serif:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+  --r:20px; --nav-h:72px;
+  --shadow:0 24px 60px -18px rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ink);color:var(--ivory);line-height:1.65;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+/* grain */
+.grain{position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* ============ APPLE GLASS NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);
+  background:rgba(14,13,11,.42);-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%);
+  border-bottom:1px solid rgba(255,255,255,.08);transition:background .4s,box-shadow .4s,border-color .4s}
+.nav.scrolled{background:rgba(14,13,11,.72);box-shadow:0 12px 40px -12px rgba(0,0,0,.6);border-bottom-color:var(--glass-line)}
+.nav-inner{max-width:1240px;margin:0 auto;height:100%;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-mark{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#221d14,#0e0d0b);border:1px solid var(--glass-line);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:22px;color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.logo-name{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.2px}
+.logo-name em{font-style:italic;color:var(--gold-light)}
+.logo-sub{font-size:10px;letter-spacing:3.5px;color:var(--taupe);text-transform:uppercase;margin-top:-3px}
+.nav-links{display:none;gap:28px;align-items:center}
+.nav-links a{font-size:14px;font-weight:600;color:rgba(247,242,234,.82);position:relative;padding:8px 2px;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:2px;height:2px;width:0;background:var(--cta);border-radius:2px;transition:width .3s}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+@media(min-width:960px){.nav-links{display:flex}}
+/* CTA — one style site-wide */
+.btn-cta{display:inline-flex;align-items:center;gap:10px;background:var(--cta);color:#1a1206;font-weight:800;font-size:15px;padding:14px 28px;border-radius:100px;border:none;min-height:48px;position:relative;overflow:hidden;box-shadow:0 10px 30px -8px rgba(224,123,36,.55),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .25s,box-shadow .25s;white-space:nowrap}
+.btn-cta::before{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(224,123,36,.7)}
+.btn-cta:hover::before{left:130%}
+.btn-cta:active{transform:translateY(0) scale(.98)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:100px;border:1px solid rgba(255,255,255,.22);color:var(--ivory);font-weight:700;font-size:14.5px;background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);min-height:48px;transition:border-color .25s,background .25s}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(201,162,75,.14)}
+.btn-ghost.dark{border-color:rgba(36,30,26,.2);color:var(--char);background:rgba(255,255,255,.5)}
+.hamb{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#fff;font-size:20px}
+@media(min-width:960px){.hamb{display:none}}
+.nav-cta-sm{padding:11px 20px;font-size:13.5px;min-height:44px}
+/* mobile glass sheet */
+.msheet{position:fixed;inset:0;z-index:1100;display:none}
+.msheet.open{display:block}
+.msheet-bg{position:absolute;inset:0;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.msheet-card{position:absolute;top:12px;left:12px;right:12px;border-radius:24px;padding:22px;background:rgba(24,21,17,.82);-webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);animation:sheetIn .35s cubic-bezier(.2,.9,.3,1.1)}
+@keyframes sheetIn{from{transform:translateY(-24px);opacity:0}to{transform:none;opacity:1}}
+.msheet-card a.mlink{display:flex;justify-content:space-between;align-items:center;padding:15px 6px;font-family:var(--serif);font-size:22px;border-bottom:1px solid rgba(255,255,255,.07)}
+.msheet-card a.mlink span{font-size:14px;color:var(--gold)}
+/* ============ LAYOUT ============ */
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+section{position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:var(--gold)}
+.eyebrow.center::after{content:"";width:28px;height:1.5px;background:var(--gold)}
+h1,h2,h3{font-family:var(--serif);line-height:1.08;font-weight:600;letter-spacing:-.01em}
+.grad-gold{background:linear-gradient(100deg,#E8CB85,#C9A24B 45%,#E07B24);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 36px) 0 0;overflow:hidden;
+  background:radial-gradient(900px 500px at 85% -5%,rgba(224,123,36,.16),transparent 60%),radial-gradient(700px 500px at 8% 20%,rgba(201,162,75,.12),transparent 60%),linear-gradient(180deg,#0E0D0B,#14110C 70%,#0E0D0B)}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+.orb1{width:420px;height:420px;background:rgba(224,123,36,.22);top:-80px;right:-100px}
+.orb2{width:360px;height:360px;background:rgba(201,162,75,.18);bottom:-60px;left:-100px;animation-delay:-6s}
+@keyframes drift{to{transform:translate(30px,40px) scale(1.08)}}
+.hero-grid{display:grid;gap:44px;align-items:center}
+@media(min-width:1020px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero h1{font-size:clamp(40px,6.4vw,72px);margin:18px 0 16px}
+.hero h1 em{font-style:italic;font-weight:500}
+.hero-sub{color:rgba(247,242,234,.75);font-size:clamp(15.5px,2vw,18px);max-width:52ch}
+.hero-sub strong{color:var(--gold-light)}
+.price-anchor{display:flex;align-items:center;gap:12px;margin:22px 0;flex-wrap:wrap}
+.price-pill{background:rgba(201,162,75,.12);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:9px 18px;border-radius:100px;font-weight:800;font-size:14.5px}
+.price-pill b{color:var(--gold-light)}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-note{margin-top:16px;font-size:13.5px;color:rgba(247,242,234,.55);display:flex;gap:8px;align-items:center}
+.dotlive{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.18);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(74,222,128,.08)}}
+/* hero montage 9:16 */
+.montage{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;perspective:1000px}
+@media(min-width:560px){.montage{gap:18px}}
+.reel-card{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:9/16;background:#222;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);animation:floaty 7s ease-in-out infinite}
+.reel-card:nth-child(2){transform:translateY(-22px);animation-delay:-2.5s}
+.reel-card:nth-child(3){animation-delay:-4.5s}
+@keyframes floaty{50%{transform:translateY(-12px)}}
+.reel-card:nth-child(2){animation-name:floaty2}
+@keyframes floaty2{50%{transform:translateY(-34px)}}
+.reel-card img{width:100%;height:100%;object-fit:cover;animation:kenburns 16s ease-in-out infinite alternate}
+@keyframes kenburns{to{transform:scale(1.12)}}
+.reel-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.72))}
+.reel-top{position:absolute;top:10px;left:10px;right:10px;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.ig-chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:6px 11px;border-radius:100px;color:#fff}
+.reel-bot{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:14px;color:#fff}
+.reel-bot b{font-size:13.5px;display:block}
+.reel-bot small{font-size:11.5px;opacity:.8}
+.playbtn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#fff;font-size:18px;transition:transform .25s,background .25s}
+.reel-card:hover .playbtn{transform:translate(-50%,-50%) scale(1.12);background:rgba(201,162,75,.75)}
+.hero-glassbar{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+.gstat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:16px;padding:12px 18px;font-size:13px}
+.gstat b{color:var(--gold-light);display:block;font-size:15px}
+/* proof strip */
+.proof{border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.proof-inner{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+@media(min-width:860px){.proof-inner{grid-template-columns:repeat(4,1fr)}}
+.proof-cell{padding:26px 22px;text-align:center;border-left:1px solid rgba(255,255,255,.07)}
+.proof-cell:first-child{border-left:none}
+.proof-cell b{font-family:var(--serif);font-size:21px;color:var(--gold-light);display:block}
+.proof-cell span{font-size:13px;color:rgba(247,242,234,.65)}
+/* ============ LIGHT SECTIONS ============ */
+.light{background:var(--ivory);color:var(--char)}
+.light .eyebrow{color:#9a7a2e}.light .eyebrow::before{background:#9a7a2e}
+.sec{padding:84px 0}
+@media(min-width:900px){.sec{padding:110px 0}}
+.sec h2{font-size:clamp(30px,4.4vw,50px);margin:14px 0 12px;max-width:20ch}
+.sec .lede{color:#5c5347;max-width:62ch;font-size:16.5px}
+/* how */
+.how-grid{display:grid;gap:16px;margin-top:36px}
+@media(min-width:900px){.how-grid{grid-template-columns:repeat(4,1fr)}}
+.how-card{background:rgba(255,255,255,.65);border:1px solid rgba(91,107,90,.18);border-radius:var(--r);padding:28px 24px;position:relative;overflow:hidden;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .3s,box-shadow .3s}
+.how-card:hover{transform:translateY(-6px);box-shadow:0 22px 44px -18px rgba(36,30,26,.25)}
+.how-num{font-family:var(--serif);font-size:52px;color:transparent;-webkit-text-stroke:1.2px var(--sage);opacity:.7;line-height:1}
+.how-card h3{font-size:20px;margin:12px 0 8px}
+.how-card p{font-size:14.5px;color:#5c5347}
+.how-card::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--marigold));opacity:0;transition:opacity .3s}
+.how-card:hover::after{opacity:1}
+/* occasions */
+.occ-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:34px}
+@media(min-width:900px){.occ-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+.occ{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:9/13;min-height:300px;border:1px solid rgba(36,30,26,.1);box-shadow:0 18px 40px -18px rgba(36,30,26,.3);transition:transform .35s}
+.occ:hover{transform:translateY(-6px) scale(1.01)}
+.occ img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.occ:hover img{transform:scale(1.07)}
+.occ::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(14,13,11,.88))}
+.occ-body{position:absolute;bottom:0;padding:20px;color:#fff;z-index:2;width:100%}
+.occ-body small{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:rgba(201,162,75,.85);color:#1a1206;padding:4px 10px;border-radius:100px;margin-bottom:10px}
+.occ-body h3{font-size:22px}
+.occ-body p{font-size:13.5px;opacity:.85;margin:6px 0 12px}
+.occ-link{font-size:13.5px;font-weight:800;color:var(--gold-light);display:inline-flex;gap:6px;align-items:center}
+/* reels dark */
+.dark-sec{background:linear-gradient(180deg,#0E0D0B,#171309 55%,#0E0D0B);color:var(--ivory)}
+.reels-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:34px}
+@media(min-width:900px){.reels-row{grid-template-columns:repeat(3,1fr);gap:20px}}
+.fcard{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/14;background:#1c1915;border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:transform .3s,border-color .3s}
+.fcard:hover{transform:translateY(-6px);border-color:var(--gold)}
+.fcard img{width:100%;height:100%;object-fit:cover}
+.fcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
+.book-style{position:absolute;bottom:12px;left:12px;right:12px;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.book-style small{font-size:12px;font-weight:700;color:#fff}
+.mini-book{font-size:12px;font-weight:800;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 14px;border-radius:100px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mini-book:hover{background:var(--gold);color:#1a1206;border-color:var(--gold)}
+/* packages */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
+.tab{padding:11px 20px;border-radius:100px;border:1.5px solid rgba(36,30,26,.16);background:#fff;font-weight:800;font-size:13.5px;color:var(--char);transition:all .25s;min-height:44px}
+.tab.active{background:var(--char);color:var(--ivory);border-color:var(--char)}
+.tab:hover{border-color:var(--gold)}
+.pkg-grid{display:grid;gap:18px}
+@media(min-width:900px){.pkg-grid{grid-template-columns:repeat(3,1fr)}}
+.pkg{background:#fff;border-radius:24px;padding:30px 26px;border:1.5px solid rgba(36,30,26,.1);position:relative;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.pkg:hover{transform:translateY(-6px);box-shadow:0 28px 50px -20px rgba(36,30,26,.28)}
+.pkg.hot{border-color:var(--gold);background:linear-gradient(180deg,#171208,#241b0d);color:var(--ivory);box-shadow:0 30px 60px -20px rgba(201,162,75,.4)}
+.pkg-flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--cta);color:#1a1206;font-size:11.5px;font-weight:800;letter-spacing:1px;padding:6px 16px;border-radius:100px;text-transform:uppercase;white-space:nowrap}
+.pkg h3{font-size:22px}
+.pkg .pprice{font-size:38px;font-weight:800;margin:12px 0 2px;letter-spacing:-1px}
+.pkg .pprice small{font-size:14px;font-weight:600;color:var(--taupe)}
+.pkg.hot .pprice small{color:rgba(247,242,234,.6)}
+.pkg ul{list-style:none;margin:18px 0;flex:1}
+.pkg li{font-size:14px;padding:9px 0 9px 30px;position:relative;border-bottom:1px dashed rgba(0,0,0,.08);color:#4a4238}
+.pkg.hot li{color:rgba(247,242,234,.85);border-color:rgba(255,255,255,.1)}
+.pkg li::before{content:"✓";position:absolute;left:2px;top:9px;width:20px;height:20px;border-radius:50%;background:var(--sage-soft);color:var(--sage);font-size:12px;font-weight:800;display:grid;place-items:center}
+.pkg.hot li::before{background:rgba(201,162,75,.2);color:var(--gold-light)}
+.adv{font-size:13px;background:var(--sage-soft);border-radius:12px;padding:10px 14px;margin-bottom:16px;color:#3d4a3c}
+.pkg.hot .adv{background:rgba(201,162,75,.14);color:var(--gold-light)}
+.pkg .btn-cta{justify-content:center;width:100%}
+/* signature band */
+.sig{background:radial-gradient(800px 400px at 50% 0%,rgba(201,162,75,.2),transparent),linear-gradient(180deg,#14110c,#0E0D0B);border:1px solid var(--glass-line);border-radius:28px;padding:46px 30px;text-align:center;position:relative;overflow:hidden}
+@media(min-width:900px){.sig{padding:70px 60px}}
+.sig::before{content:"Signature";position:absolute;top:18px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-style:italic;font-size:120px;opacity:.05;white-space:nowrap;pointer-events:none}
+@media(min-width:900px){.sig::before{font-size:190px}}
+/* testimonials */
+.testi-grid{display:grid;gap:16px;margin-top:32px}
+@media(min-width:900px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+.testi{background:rgba(255,255,255,.7);border:1px solid rgba(36,30,26,.1);border-radius:20px;padding:26px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.testi .stars{color:var(--marigold);letter-spacing:2px;font-size:14px}
+.testi p{font-family:var(--serif);font-size:17px;font-style:italic;margin:12px 0 16px;color:var(--char)}
+.testi b{font-size:14px}.testi small{color:var(--taupe);font-size:12.5px}
+/* insta */
+.insta-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
+@media(min-width:900px){.insta-strip{grid-template-columns:repeat(6,1fr)}}
+.insta-strip a{border-radius:16px;overflow:hidden;aspect-ratio:1;position:relative}
+.insta-strip img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.insta-strip a:hover img{transform:scale(1.08)}
+/* faq */
+.faq{max-width:820px;margin:30px auto 0}
+.faq-item{background:#fff;border:1px solid rgba(36,30,26,.1);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:19px 20px;font-weight:800;font-size:15.5px;color:var(--char);display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px}
+.faq-q span{width:32px;height:32px;flex:none;border-radius:50%;background:var(--sage-soft);display:grid;place-items:center;font-size:18px;transition:transform .3s}
+.faq-item.open .faq-q span{transform:rotate(45deg);background:var(--gold);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding:0 20px 20px;font-size:14.5px;color:#5c5347}
+/* about */
+.about-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:960px){.about-grid{grid-template-columns:1fr 1fr}}
+.about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.about-imgs img{border-radius:18px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.about-imgs img:last-child{margin-top:30px}
+.vs-box{background:#fff;border:1px solid rgba(36,30,26,.1);border-radius:18px;padding:22px;margin-top:20px}
+.vs-box h4{font-family:var(--serif);font-size:18px;margin-bottom:8px}
+.vs-box p{font-size:14.5px;color:#5c5347}
+/* contact */
+.contact-grid{display:grid;gap:20px;margin-top:30px}
+@media(min-width:960px){.contact-grid{grid-template-columns:1.1fr .9fr}}
+.form-card{background:#fff;border-radius:24px;padding:30px;border:1px solid rgba(36,30,26,.1)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px;color:var(--char)}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid rgba(36,30,26,.14);font-family:inherit;font-size:15px;background:#FCFAF5;min-height:52px;transition:border-color .25s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.info-card{background:linear-gradient(180deg,#171208,#0E0D0B);color:var(--ivory);border-radius:24px;padding:32px;border:1px solid var(--glass-line)}
+.info-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14.5px}
+.info-row:last-child{border:none}
+.info-ico{width:44px;height:44px;flex:none;border-radius:14px;background:rgba(201,162,75,.15);border:1px solid var(--glass-line);display:grid;place-items:center;font-size:19px}
+/* final cta */
+.final{background:radial-gradient(700px 380px at 50% 120%,rgba(224,123,36,.28),transparent),#0E0D0B;text-align:center;padding:100px 20px;border-top:1px solid rgba(255,255,255,.07)}
+.final h2{font-size:clamp(32px,5vw,58px);max-width:18ch;margin:16px auto}
+/* footer */
+footer{background:#0A0908;border-top:1px solid rgba(255,255,255,.07);padding:56px 0 120px;color:rgba(247,242,234,.7);font-size:14px}
+.foot-grid{display:grid;gap:30px}
+@media(min-width:900px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.foot-grid h5{color:#fff;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.foot-grid a{display:block;padding:6px 0;transition:color .2s}
+.foot-grid a:hover{color:var(--gold-light)}
+/* whatsapp float */
+.wa-float{position:fixed;bottom:22px;right:18px;z-index:900;display:flex;align-items:center;gap:10px;background:#1FA855;color:#fff;font-weight:800;font-size:14px;padding:14px 20px 14px 16px;border-radius:100px;box-shadow:0 16px 40px -10px rgba(31,168,85,.6);border:1px solid rgba(255,255,255,.25);min-height:54px;transition:transform .25s}
+.wa-float:hover{transform:scale(1.05)}
+.wa-float .wa-ico{width:30px;height:30px;border-radius:50%;background:#fff;color:#1FA855;display:grid;place-items:center;font-size:17px}
+/* ============ BOOKING MODAL ============ */
+.book-overlay{position:fixed;inset:0;z-index:1200;display:none;align-items:flex-end;justify-content:center}
+.book-overlay.open{display:flex}
+.book-bg{position:absolute;inset:0;background:rgba(8,7,6,.7);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.book-sheet{position:relative;width:100%;max-width:720px;max-height:94svh;overflow-y:auto;background:var(--ivory);color:var(--char);border-radius:28px 28px 0 0;border:1px solid rgba(255,255,255,.2);animation:sheetUp .4s cubic-bezier(.2,.9,.3,1)}
+@media(min-width:760px){.book-overlay{align-items:center;padding:24px}.book-sheet{border-radius:28px}}
+@keyframes sheetUp{from{transform:translateY(60px);opacity:0}to{transform:none;opacity:1}}
+.book-head{position:sticky;top:0;z-index:5;background:rgba(247,242,234,.85);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);padding:20px 24px 14px;border-bottom:1px solid rgba(36,30,26,.08)}
+.book-head h3{font-size:24px}
+.steps-bar{display:flex;gap:6px;margin-top:14px}
+.steps-bar i{flex:1;height:5px;border-radius:4px;background:rgba(36,30,26,.12);overflow:hidden;position:relative}
+.steps-bar i.done{background:var(--gold)}
+.steps-bar i.now::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--gold),var(--marigold));animation:load 1.2s infinite}
+@keyframes load{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.book-body{padding:24px}
+.bstep{display:none}.bstep.active{display:block;animation:fadeSlide .35s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.opt-grid{display:grid;gap:12px;margin-top:6px}
+@media(min-width:600px){.opt-grid{grid-template-columns:1fr 1fr}}
+.opt{border:2px solid rgba(36,30,26,.12);border-radius:18px;padding:18px;background:#fff;text-align:left;transition:all .25s;min-height:64px}
+.opt:hover{border-color:var(--gold)}
+.opt.sel{border-color:var(--marigold);background:#FFF8EC;box-shadow:0 10px 24px -12px rgba(224,123,36,.5)}
+.opt b{display:block;font-size:15.5px}.opt small{font-size:13px;color:#6b6154}.opt .op{font-weight:800;color:#9a7a2e;margin-top:6px;display:block}
+.date-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:12px}
+.dcell{aspect-ratio:1;border-radius:12px;border:1.5px solid rgba(36,30,26,.12);background:#fff;font-weight:700;font-size:13px;display:grid;place-items:center;min-height:48px}
+.dcell:not(:disabled):hover{border-color:var(--gold)}
+.dcell.sel{background:var(--char);color:#fff;border-color:var(--char)}
+.dcell:disabled{opacity:.32;text-decoration:line-through;cursor:not-allowed}
+.sum-box{background:#fff;border:1px solid rgba(36,30,26,.1);border-radius:18px;padding:20px;margin:14px 0}
+.sum-row{display:flex;justify-content:space-between;font-size:14.5px;padding:7px 0}
+.sum-row.total{font-weight:800;font-size:17px;border-top:1.5px solid rgba(36,30,26,.12);margin-top:8px;padding-top:12px}
+.sum-row.adv{color:#9a7a2e;font-weight:800}
+.policy-check{display:flex;gap:12px;background:#FFF8EC;border:1px solid rgba(201,162,75,.4);border-radius:14px;padding:14px;font-size:13.5px;margin:12px 0}
+.book-nav{display:flex;gap:12px;margin-top:20px}
+.book-nav .btn-cta{flex:1;justify-content:center}
+.btn-back{padding:14px 22px;border-radius:100px;border:1.5px solid rgba(36,30,26,.16);background:none;font-weight:800;min-height:52px}
+.cal-note{font-size:13px;color:var(--brick);font-weight:700;margin-top:10px;min-height:20px}
+/* lightbox + legal */
+.lb{position:fixed;inset:0;z-index:1300;display:none;place-items:center;padding:20px}
+.lb.open{display:grid}
+.lb-bg{position:absolute;inset:0;background:rgba(0,0,0,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lb-card{position:relative;width:min(420px,100%);aspect-ratio:9/14;border-radius:22px;overflow:hidden;background:#000;border:1px solid rgba(255,255,255,.2)}
+.lb-card img{width:100%;height:100%;object-fit:cover}
+.lb-close{position:absolute;top:12px;right:12px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.5);color:#fff;font-size:18px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.legal{position:fixed;inset:0;z-index:1300;display:none;place-items:center;padding:18px}
+.legal.open{display:grid}
+.legal-card{position:relative;width:min(640px,100%);max-height:84svh;overflow-y:auto;background:var(--ivory);color:var(--char);border-radius:22px;padding:32px 28px}
+.legal-card h3{font-size:26px;margin-bottom:12px}.legal-card p,.legal-card li{font-size:14.5px;color:#4a4238}.legal-card ul{padding-left:20px;margin:10px 0}
+.toast{position:fixed;bottom:92px;left:50%;transform:translateX(-50%) translateY(20px);background:#1c1915;color:#fff;padding:14px 22px;border-radius:100px;border:1px solid var(--glass-line);font-size:14px;font-weight:700;opacity:0;pointer-events:none;transition:all .35s;z-index:1500;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%)}
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- NAV : Apple glass -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="ReelsZen home">
+      <span class="logo-mark">R</span>
+      <span><span class="logo-name">Reels<em>Zen</em></span><br><span class="logo-sub">Hyderabad · Same-day reels</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#packages">Packages</a>
+      <a href="#reels">Reels</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="btn-cta nav-cta-sm" data-book>Book Your Date</button>
+      <button class="hamb" id="hamb" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile sheet -->
+<div class="msheet" id="msheet">
+  <div class="msheet-bg" id="msheetBg"></div>
+  <div class="msheet-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <b style="font-family:var(--serif);font-size:20px">Reels<em style="color:var(--gold)">Zen</em></b>
+      <button class="hamb" id="mclose" aria-label="Close menu" style="border-color:rgba(255,255,255,.2)">✕</button>
+    </div>
+    <a class="mlink" href="#packages">Packages <span>→</span></a>
+    <a class="mlink" href="#reels">Reels <span>→</span></a>
+    <a class="mlink" href="#about">About <span>→</span></a>
+    <a class="mlink" href="#contact">Contact <span>→</span></a>
+    <button class="btn-cta" data-book style="width:100%;justify-content:center;margin-top:16px">Book Your Date</button>
+  </div>
+</div>
+
+<main id="home">
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal in">Shot on iPhone · Edited on-site · Hyderabad</span>
+      <h1>Your wedding reel.<br><em class="grad-gold">Delivered before the celebration ends.</em></h1>
+      <p class="hero-sub">Not in 2 months. <strong>Tonight</strong> — while everyone is still together. We shoot on iPhone at your wedding in Hyderabad, edit on-site, and hand you your first reel before the lights go down.</p>
+      <div class="price-anchor">
+        <span class="price-pill">Reels from <b>Rs. 1,999</b> + GST</span>
+        <span class="price-pill" style="background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.3)"><span class="dotlive" style="display:inline-block;margin-right:6px"></span>Same-day delivery</span>
+      </div>
+      <div class="hero-ctas">
+        <button class="btn-cta" data-book>Book Your Date →</button>
+        <a class="btn-ghost" href="#reels">▶ Watch Reels</a>
+      </div>
+      <p class="hero-note"><span class="dotlive"></span> Advance-paid dates lock automatically · Under 3-minute booking · No DM-for-price</p>
+      <div class="hero-glassbar">
+        <div class="gstat"><b>Tonight, not 2 months</b>first reel before event ends</div>
+        <div class="gstat"><b>Raw footage included</b>on all wedding plans</div>
+        <div class="gstat"><b>One honest price</b>same on site + checkout</div>
+      </div>
+    </div>
+    <div class="montage" aria-label="Reel montage">
+      <div class="reel-card"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop" alt="Indian wedding couple" loading="eager" fetchpriority="high"><span class="reel-top"><span class="ig-chip">◎ reelszen_</span></span><button class="playbtn" data-reel="0">▶</button><div class="reel-bot"><b>Aishwarya × Aditya</b><small>Wedding · Hyderabad</small></div></div>
+      <div class="reel-card"><img src="https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?q=80&w=600&auto=format&fit=crop" alt="Haldi celebration" loading="lazy"><span class="reel-top"><span class="ig-chip">◎ reelszen_</span></span><button class="playbtn" data-reel="1">▶</button><div class="reel-bot"><b>Haldi Morning</b><small>Mehendi · Same-day cut</small></div></div>
+      <div class="reel-card"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop" alt="Bride celebration" loading="lazy"><span class="reel-top"><span class="ig-chip">◎ reelszen_</span></span><button class="playbtn" data-reel="2">▶</button><div class="reel-bot"><b>Sangeet Night</b><small>Delivered same night</small></div></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:44px;padding-bottom:34px"><p style="text-align:center;font-size:12.5px;letter-spacing:2px;color:rgba(247,242,234,.4)">SCROLL — THE CALM AFTER THE BARAAT ↓</p></div>
+</section>
+
+<!-- PROOF : qualitative only, never fake numbers (PRD §6) -->
+<div class="proof"><div class="wrap proof-inner">
+  <div class="proof-cell"><b>Same-day delivery</b><span>first reel before your event ends</span></div>
+  <div class="proof-cell"><b>Shot + edited on-site</b><span>at your venue in Hyderabad</span></div>
+  <div class="proof-cell"><b>Raw footage included</b><span>on every wedding plan</span></div>
+  <div class="proof-cell"><b>Advance locks date</b><span>no double-booking, ever</span></div>
+</div></div>
+
+<!-- HOW -->
+<section class="light" id="how"><div class="wrap sec">
+  <span class="eyebrow reveal">How it works</span>
+  <h2 class="reveal">Calm on the surface.<br><span style="font-style:italic;color:#9a7a2e">Ruthless</span> underneath.</h2>
+  <p class="lede reveal">Four steps. No chasing, no "sir DM price". You book in minutes — we handle the chaos of the wedding day.</p>
+  <div class="how-grid">
+    <div class="how-card reveal"><div class="how-num">01</div><h3>Book your date</h3><p>Pick occasion + package, choose your date, pay a small advance. Date locks instantly.</p></div>
+    <div class="how-card reveal d1"><div class="how-num">02</div><h3>We shoot on iPhone</h3><p>Cinematic vertical coverage that never blocks your photographer. Quiet, quick, everywhere.</p></div>
+    <div class="how-card reveal d2"><div class="how-num">03</div><h3>Edited on-site</h3><p>Our editor cuts your reel live at the venue — haldi colours, baraat energy, intact.</p></div>
+    <div class="how-card reveal d3"><div class="how-num">04</div><h3>Delivered tonight</h3><p>First reel in your WhatsApp before the event ends. Share it while everyone is still together.</p></div>
+  </div>
+</div></section>
+
+<!-- OCCASIONS -->
+<section class="light" id="occasions" style="background:var(--ivory2)"><div class="wrap sec" style="padding-top:0">
+  <span class="eyebrow reveal">Occasions</span>
+  <h2 class="reveal">One team. Every celebration.</h2>
+  <div class="occ-grid">
+    <div class="occ reveal"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=700&auto=format&fit=crop" alt="Weddings" loading="lazy"><div class="occ-body"><small>from Rs. 14,999</small><h3>Weddings</h3><p>The full story — delivered tonight.</p><a class="occ-link" href="#packages" data-goto-tab="weddings">See wedding plans →</a></div></div>
+    <div class="occ reveal d1"><img src="https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?q=80&w=700&auto=format&fit=crop" alt="Haldi Mehendi Sangeet" loading="lazy"><div class="occ-body"><small>from Rs. 1,999</small><h3>Haldi · Mehendi · Sangeet</h3><p>Colour, chaos, cousins — same-day cut.</p><a class="occ-link" href="#packages" data-goto-tab="events">See event plans →</a></div></div>
+    <div class="occ reveal d2"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=700&auto=format&fit=crop" alt="Birthdays" loading="lazy"><div class="occ-body"><small>from Rs. 1,999</small><h3>Birthdays</h3><p>One hour. One perfect reel.</p><a class="occ-link" href="#packages" data-goto-tab="events">See event plans →</a></div></div>
+    <div class="occ reveal"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=700&auto=format&fit=crop" alt="Brands and stores" loading="lazy"><div class="occ-body"><small>custom quote</small><h3>Brands &amp; Stores</h3><p>Launches that look like campaigns.</p><a class="occ-link" href="#contact">Get a quote →</a></div></div>
+    <div class="occ reveal d1"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=700&auto=format&fit=crop" alt="Real estate" loading="lazy"><div class="occ-body"><small>custom quote</small><h3>Real Estate</h3><p>Walkthroughs buyers actually watch.</p><a class="occ-link" href="#contact">Get a quote →</a></div></div>
+    <div class="occ reveal d2"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=700&auto=format&fit=crop" alt="Festivals and events" loading="lazy"><div class="occ-body"><small>from Rs. 4,999</small><h3>Festivals &amp; Events</h3><p>Aftermovies before the hangover.</p><a class="occ-link" href="#packages" data-goto-tab="events">See event plans →</a></div></div>
+  </div>
+</div></section>
+
+<!-- REELS -->
+<section class="dark-sec" id="reels"><div class="wrap sec">
+  <span class="eyebrow reveal">Featured reels · @reelszen_</span>
+  <h2 class="reveal">Proof, not <span class="grad-gold" style="font-style:italic">decoration.</span></h2>
+  <p class="reveal" style="color:rgba(247,242,234,.65);max-width:60ch">Real work, permission-cleared, playing right here. Every card carries a "Book this style" link — it opens booking pre-filled.</p>
+  <div class="reels-row" id="reelsRow"></div>
+  <div style="text-align:center;margin-top:28px"><a class="btn-ghost" href="https://www.instagram.com/reelszen_" target="_blank" rel="noopener">◎ Follow @reelszen_ — 491 family &amp; growing</a></div>
+</div></section>
+
+<!-- PACKAGES -->
+<section class="light" id="packages"><div class="wrap sec">
+  <span class="eyebrow reveal">Packages &amp; pricing</span>
+  <h2 class="reveal">One honest ladder.<br>No DM-for-price.</h2>
+  <p class="lede reveal">Website, Instagram and checkout read from one price table. GST shown upfront — the number you see is the number you pay.</p>
+  <div class="tabs reveal" id="tabs" role="tablist">
+    <button class="tab active" data-tab="all">All</button>
+    <button class="tab" data-tab="weddings">Weddings</button>
+    <button class="tab" data-tab="events">Events</button>
+    <button class="tab" data-tab="signature">Signature</button>
+    <button class="tab" data-tab="business">Business</button>
+  </div>
+  <div class="pkg-grid" id="pkgGrid"></div>
+  <div class="reveal" style="margin-top:22px;background:#fff;border:1px dashed rgba(36,30,26,.25);border-radius:16px;padding:18px 20px;font-size:14px;color:#5c5347">
+    <b>Add-ons:</b> Extra edited reel — Rs. 1,299 · Extra hour of coverage — Rs. 1,299 · Raw footage — <b>included free</b> on all wedding plans. Balance due before the shoot. Reschedule once free if the date is open.
+  </div>
+</div></section>
+
+<!-- SIGNATURE -->
+<section class="light" style="background:var(--ivory)"><div class="wrap" style="padding-bottom:90px">
+  <div class="sig reveal">
+    <span class="eyebrow center" style="justify-content:center">ReelsZen Signature · Rs. 19,999 / event</span>
+    <h2 style="font-size:clamp(30px,4.6vw,52px);margin:16px 0">For the wedding that<br><span class="grad-gold" style="font-style:italic">cannot be repeated.</span></h2>
+    <p style="color:rgba(247,242,234,.7);max-width:56ch;margin:0 auto 26px">Top creator + director-led shoot. Cinematic grade. Priority delivery — your reel leads the night, not follows it.</p>
+    <button class="btn-cta" data-book data-pkg="sig">Reserve Signature →</button>
+  </div>
+</div></section>
+
+<!-- REVIEWS -->
+<section class="light" id="reviews" style="background:var(--sage-soft)"><div class="wrap sec" style="padding-top:90px">
+  <span class="eyebrow reveal">Love notes</span>
+  <h2 class="reveal">Families, not followers.</h2>
+  <div class="testi-grid">
+    <div class="testi reveal"><div class="stars">★★★★★</div><p>"Our sangeet reel was playing on everyone's phones before dinner ended. My mother cried twice."</p><b>Sravani</b><br><small>Wedding · Hyderabad</small></div>
+    <div class="testi reveal d1"><div class="stars">★★★★★</div><p>"They never blocked our photographer. Quiet team, loud output. Haldi reel the same evening."</p><b>Rohit</b><br><small>Haldi + Wedding · Kompally</small></div>
+    <div class="testi reveal d2"><div class="stars">★★★★★</div><p>"Booked from Instagram in 3 minutes. Date locked on WhatsApp instantly. Zero follow-up needed."</p><b>Farah</b><br><small>Birthday · Jubilee Hills</small></div>
+  </div>
+  <p class="reveal" style="font-size:13px;color:#6b6154;margin-top:16px">Real reviews only — first name + event type. Collecting our first 30 Google reviews honestly; no borrowed numbers, ever.</p>
+</div></section>
+
+<!-- ABOUT -->
+<section class="light" id="about"><div class="wrap sec">
+  <div class="about-grid">
+    <div class="reveal">
+      <span class="eyebrow">Why ReelsZen</span>
+      <h2>Started with one iPhone. And one belief.</h2>
+      <p class="lede" style="margin-top:12px">Your memories should not take two months. We shoot weddings and events across Hyderabad, edit on-site at your venue, and deliver your first reel before the celebration ends.</p>
+      <div class="vs-box">
+        <h4>“But we already have a videographer?”</h4>
+        <p>Keep them — you'll need them. Your photographer and videographer craft the long film, the archive you'll treasure for decades. <b>ReelsZen is the missing piece:</b> the vertical, cinematic cut made for sharing <i>tonight</i> — while the baraat is still dancing and the family is still together. You share tonight; they deliver the archive later.</p>
+      </div>
+      <div class="vs-box" style="background:var(--sage-soft);border-color:rgba(91,107,90,.25)">
+        <h4>🛡️ Our promise</h4>
+        <p>One price everywhere. Real work only — never stock passed off as ours. Your date locks only when your advance pays. No double-booking, ever.</p>
+      </div>
+    </div>
+    <div class="about-imgs reveal d1">
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=700&auto=format&fit=crop" alt="On-site editing at wedding" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=700&auto=format&fit=crop" alt="Team at work" loading="lazy">
+    </div>
+  </div>
+</div></section>
+
+<!-- INSTA -->
+<section class="light" style="background:var(--ivory2)"><div class="wrap sec" style="padding-top:0">
+  <span class="eyebrow reveal">@reelszen_ on Instagram</span>
+  <h2 class="reveal">Warm &amp; loyal — come say hi.</h2>
+  <div class="insta-strip reveal" id="instaStrip"></div>
+</div></section>
+
+<!-- FAQ -->
+<section class="light" id="faq" style="background:var(--ivory)"><div class="wrap sec" style="padding-top:0">
+  <div style="text-align:center"><span class="eyebrow center" style="justify-content:center">Objections, answered</span>
+  <h2>Everything families ask us.</h2></div>
+  <div class="faq" id="faqList">
+    <div class="faq-item"><button class="faq-q">Will my reel really be ready the same day? <span>+</span></button><div class="faq-a"><p>Yes. Your first reel is edited on-site at your venue and delivered before the event ends. Multi-event weddings get reels per event, same rhythm.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Is iPhone quality good enough for a wedding? <span>+</span></button><div class="faq-a"><p>For reels — absolutely. Vertical, cinematic, graded for phones where your reel will actually be watched. Your photographer handles the 8K archive; we handle tonight.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Do I get raw footage? <span>+</span></button><div class="faq-a"><p>Included free on all wedding plans. We state it proudly — we never upsell what we promised free.</p></div></div>
+    <div class="faq-item"><button class="faq-q">How does the date lock work? <span>+</span></button><div class="faq-a"><p>Pick your date, pay the small advance via Razorpay (UPI / cards). Only on successful payment does your date block for others. Failed payment? Your date stays open and you get a retry link for 30 minutes.</p></div></div>
+    <div class="faq-item"><button class="faq-q">What if we need to reschedule? <span>+</span></button><div class="faq-a"><p>Reschedule once free if your new date is open. Refunds follow our published Cancellation &amp; Refund Policy — shown before you pay, enforced exactly as written.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Do you travel outside Hyderabad? <span>+</span></button><div class="faq-a"><p>Hyderabad is home. Outstation on request — travel cost confirmed per booking on WhatsApp before you pay.</p></div></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="light" id="contact" style="background:var(--ivory2)"><div class="wrap sec" style="padding-top:90px">
+  <span class="eyebrow reveal">Contact</span>
+  <h2 class="reveal">Talk to a human. Fast.</h2>
+  <div class="contact-grid">
+    <form class="form-card reveal" id="contactForm">
+      <div class="field"><label for="cname">Your name</label><input id="cname" required placeholder="e.g. Ananya"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="field"><label for="cphone">WhatsApp number</label><input id="cphone" inputmode="numeric" maxlength="10" required placeholder="10-digit mobile"></div>
+        <div class="field"><label for="cdate">Event date</label><input id="cdate" type="date" required></div>
+      </div>
+      <div class="field"><label for="cmsg">Tell us about the event</label><textarea id="cmsg" rows="4" placeholder="Venue, functions, what you dream of…"></textarea></div>
+      <input type="text" id="honey" style="display:none" tabindex="-1" autocomplete="off">
+      <button class="btn-cta" style="width:100%;justify-content:center" type="submit">Send on WhatsApp →</button>
+      <p style="font-size:12.5px;color:var(--taupe);margin-top:10px;text-align:center">Replies within a few hours on booking days · Hyderabad primary, outstation on request</p>
+    </form>
+    <div class="info-card reveal d1">
+      <div class="info-row"><div class="info-ico">✆</div><div><b>Call / WhatsApp</b><br><span style="opacity:.75">Tap the green button — pre-filled with your date. Number lives in our Instagram bio.</span></div></div>
+      <div class="info-row"><div class="info-ico">◎</div><div><b>Instagram</b><br><a href="https://www.instagram.com/reelszen_" target="_blank" rel="noopener" style="color:var(--gold-light);font-weight:800">@reelszen_</a><br><span style="opacity:.75">Warmest place to see new work first.</span></div></div>
+      <div class="info-row"><div class="info-ico">◉</div><div><b>Service area</b><br>Hyderabad — Jubilee Hills · Kompally · Gachibowli · Old City &amp; beyond<br><span style="opacity:.75">Outstation: travel cost confirmed per booking.</span></div></div>
+      <button class="btn-cta" data-book style="width:100%;justify-content:center;margin-top:18px">Check My Date →</button>
+    </div>
+  </div>
+</div></section>
+
+<!-- FINAL -->
+<section class="final">
+  <span class="eyebrow center" style="justify-content:center">Dates go first in wedding season</span>
+  <h2>Your reel. <span class="grad-gold" style="font-style:italic">Tonight.</span> Your date — locked in 3 minutes.</h2>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
+    <button class="btn-cta" data-book style="font-size:17px;padding:17px 38px">Book Your Date →</button>
+    <a class="btn-ghost" href="#packages">See honest prices</a>
+  </div>
+  <p style="font-size:13px;color:rgba(247,242,234,.5);margin-top:18px">Advance locks your date · GST shown upfront · Retry link if payment drops</p>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <b style="font-family:var(--serif);font-size:24px;color:#fff">Reels<em style="color:var(--gold)">Zen</em></b>
+      <p style="margin:10px 0 14px;max-width:34ch">Your wedding reel. Delivered before the celebration ends. Hyderabad.</p>
+      <a href="https://www.instagram.com/reelszen_" target="_blank" rel="noopener" style="color:var(--gold-light);font-weight:800">◎ @reelszen_</a>
+    </div>
+    <div><h5>Book</h5><a href="#packages">Packages &amp; pricing</a><a href="#" data-book>Book your date</a><a href="#reels">Featured reels</a><a href="#faq">FAQ</a></div>
+    <div><h5>Company</h5><a href="#about">About</a><a href="#contact">Contact</a><a href="#reviews">Reviews</a></div>
+    <div><h5>Legal · Razorpay ready</h5><a href="#" data-legal="terms">Terms</a><a href="#" data-legal="refund">Cancellation &amp; Refund</a><a href="#" data-legal="privacy">Privacy</a></div>
+  </div>
+  <div class="wrap" style="margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <span>© 2026 ReelsZen · Hyderabad · Made with calm.</span>
+    <span>Reel tonight, not in 2 months.</span>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/919000000000?text=Hi%20ReelsZen!%20Is%20my%20date%20free%3F" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><span class="wa-ico">✆</span> WhatsApp us</a>
+
+<!-- BOOKING -->
+<div class="book-overlay" id="bookOverlay" role="dialog" aria-modal="true" aria-label="Book your date">
+  <div class="book-bg" id="bookBg"></div>
+  <div class="book-sheet">
+    <div class="book-head">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div><span class="eyebrow">Booking · under 3 min</span><h3 id="bookTitle">Occasion &amp; package</h3></div>
+        <button class="btn-back" id="bookClose" style="min-height:44px;padding:10px 18px">✕</button>
+      </div>
+      <div class="steps-bar" id="stepsBar"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="book-body">
+      <!-- STEP 1 -->
+      <div class="bstep active" data-step="1">
+        <p style="font-size:14px;color:#6b6154;margin-bottom:12px">What are we celebrating?</p>
+        <div class="opt-grid" id="occPick">
+          <button class="opt sel" data-occ="Wedding"><b>💍 Wedding</b><small>Single event → full story tonight</small></button>
+          <button class="opt" data-occ="Haldi / Mehendi / Sangeet"><b>🌼 Haldi / Sangeet</b><small>Colour + chaos, same-day cut</small></button>
+          <button class="opt" data-occ="Birthday / Private"><b>🎂 Birthday / Private</b><small>Fast, joyful, affordable</small></button>
+          <button class="opt" data-occ="Business / Brand"><b>◈ Business / Brand</b><small>Custom quote via contact</small></button>
+        </div>
+        <p style="font-size:14px;color:#6b6154;margin:18px 0 12px">Pick your package <span style="font-weight:800">— one price everywhere:</span></p>
+        <div class="opt-grid" id="pkgPick"></div>
+      </div>
+      <!-- STEP 2 -->
+      <div class="bstep" data-step="2">
+        <p style="font-size:14px;color:#6b6154">Pick your date — <b>greyed dates are full.</b></p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px">
+          <button class="btn-back" id="calPrev" style="min-height:44px">←</button>
+          <b id="calLabel" style="font-family:var(--serif);font-size:19px"></b>
+          <button class="btn-back" id="calNext" style="min-height:44px">→</button>
+        </div>
+        <div class="date-grid" id="calGrid"></div>
+        <p class="cal-note" id="calNote"></p>
+        <div class="field" style="margin-top:8px"><label>City</label><input id="bCity" value="Hyderabad"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="field"><label>Venue / area</label><input id="bVenue" placeholder="e.g. Jubilee Hills"></div>
+          <div class="field"><label>Start time</label><input id="bTime" type="time"></div>
+        </div>
+      </div>
+      <!-- STEP 3 -->
+      <div class="bstep" data-step="3">
+        <div class="field"><label>Your name</label><input id="bName" placeholder="e.g. Ananya & Arjun"></div>
+        <div class="field"><label>WhatsApp number (10-digit)</label><input id="bPhone" inputmode="numeric" maxlength="10" placeholder="e.g. 98765 43210"></div>
+        <div class="field"><label>Email for receipt (optional)</label><input id="bEmail" type="email" placeholder="you@email.com"></div>
+        <div class="field"><label>Notes — couple names, functions, special moments</label><textarea id="bNotes" rows="3" placeholder="Anything we must not miss…"></textarea></div>
+      </div>
+      <!-- STEP 4 -->
+      <div class="bstep" data-step="4">
+        <div class="sum-box" id="sumBox"></div>
+        <label class="policy-check"><input type="checkbox" id="policyOk" style="width:22px;height:22px;accent-color:#E07B24;flex:none;margin-top:2px"><span>I agree to the <a href="#" data-legal="refund" style="font-weight:800;text-decoration:underline">Cancellation &amp; Reschedule policy</a> — advance blocks my date; reschedule once free if the date is open.</span></label>
+      </div>
+      <!-- STEP 5 -->
+      <div class="bstep" data-step="5">
+        <div id="payPane">
+          <div class="sum-box" id="paySum"></div>
+          <button class="btn-cta" id="payBtn" style="width:100%;justify-content:center;font-size:17px">Pay advance securely →</button>
+          <p style="font-size:12.5px;color:var(--taupe);text-align:center;margin-top:10px">UPI · Cards · Netbanking via Razorpay · No card data touches our site</p>
+          <p style="font-size:12.5px;color:var(--taupe);text-align:center">Demo mode: simulates a live Razorpay success + webhook.</p>
+        </div>
+        <div id="donePane" style="display:none;text-align:center;padding:10px 0">
+          <div style="font-size:56px">✨</div>
+          <h3 style="font-size:28px">Date locked. See you at the baraat.</h3>
+          <p id="doneId" style="font-weight:800;color:#9a7a2e;margin:10px 0"></p>
+          <p id="doneDetail" style="font-size:14.5px;color:#5c5347"></p>
+          <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;justify-content:center">
+            <a class="btn-cta" id="doneWa" target="_blank" rel="noopener">Confirm on WhatsApp →</a>
+            <button class="btn-back" id="doneClose">Done</button>
+          </div>
+        </div>
+      </div>
+      <div class="book-nav">
+        <button class="btn-back" id="stepBack">← Back</button>
+        <button class="btn-cta" id="stepNext">Continue →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- reel lightbox -->
+<div class="lb" id="lb"><div class="lb-bg" id="lbBg"></div>
+  <div class="lb-card"><button class="lb-close" id="lbClose">✕</button><img id="lbImg" src="" alt="Reel preview"><div class="reel-bot"><b id="lbTitle"></b><small>Tap “Book this style” to pre-fill booking ↑</small></div></div>
+</div>
+
+<!-- legal -->
+<div class="legal" id="legal"><div class="lb-bg" data-close-legal></div>
+  <div class="legal-card"><button class="lb-close" data-close-legal style="border-color:rgba(0,0,0,.2);background:#fff;color:#000;top:14px;right:14px">✕</button><div id="legalBody"></div></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== SINGLE PRICING SOURCE (FR-14) ===== */
+const PRICING=[
+ {id:"quick",cat:"events",name:"Quick Reel — Events",price:1999,adv:699,blurb:"1 hour · 1 edited reel · 3 photos · same-day",feats:["1 hour coverage","1 edited vertical reel","3 edited photos","Same-day delivery","WhatsApp delivery"]},
+ {id:"half",cat:"events",name:"Half Day — Events",price:4999,adv:1099,blurb:"Up to 3 hrs · 2 reels · 10 photos · same-day",feats:["Up to 3 hours","2 edited reels","10 edited photos","Same-day delivery","1 revision"]},
+ {id:"wed1",cat:"weddings",hot:true,name:"Wedding — Single Event",price:14999,adv:3799,blurb:"3 reels · raw footage · before event ends",feats:["3 cinematic reels","Raw footage included FREE","Edited on-site","Delivered before event ends","1 revision per reel"]},
+ {id:"wed3",cat:"weddings",name:"Wedding — 3 Events",price:44999,adv:11250,blurb:"10 reels across 3 events · raw footage",feats:["10 reels across 3 events","Raw footage included FREE","Dedicated on-site editor","Priority delivery each night"]},
+ {id:"wed4",cat:"weddings",name:"Wedding — 4 Events",price:59999,adv:15000,blurb:"15 reels across 4 events · raw footage",feats:["15 reels across 4 events","Raw footage included FREE","Dedicated on-site editor","Priority delivery each night"]},
+ {id:"sig",cat:"signature",hot:true,name:"ReelsZen Signature",price:19999,per:"/ event",adv:4999,blurb:"Director-led · cinematic grade · priority",feats:["Top creator + director","Cinematic colour grade","Priority same-night delivery","BTS + premiere cut"]},
+ {id:"biz",cat:"business",custom:true,name:"Business / Brands",price:0,adv:0,blurb:"Stores, launches, real estate — scoped per brief",feats:["Scoped per brief","Campaign-grade vertical","Usage licence included","Contact for quote"]}
+];
+const REELS=[
+ {t:"Aishwarya × Aditya",s:"Wedding · Hyderabad",img:"https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop"},
+ {t:"Haldi Morning",s:"Mehendi · Same-day cut",img:"https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?q=80&w=600&auto=format&fit=crop"},
+ {t:"Sangeet Night",s:"Delivered same night",img:"https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop"},
+ {t:"Meher & Kabir",s:"Wedding · Kompally",img:"https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=600&auto=format&fit=crop"},
+ {t:"Boutique Launch",s:"Brand · Jubilee Hills",img:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop"},
+ {t:"Festival Night",s:"Event · Aftermovie",img:"https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600&auto=format&fit=crop"}
+];
+const INSTA=["photo-1583939003579-730e3918a45a","photo-1610173826608-bd1f53a52db1","photo-1519741497674-611481863552","photo-1606800052052-a08af7148866","photo-1530103862676-de8c9debad1d","photo-1492684223066-81342ee5ff30"];
+const WA="919000000000"; // ponytail: owner number goes here (PRD §17.3)
+const GST=0.18;
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const inr=n=>"Rs. "+Number(n).toLocaleString("en-IN");
+const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._x);t._x=setTimeout(()=>t.classList.remove("show"),2800)};
+
+/* nav */
+const nav=$("#nav");addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>24),{passive:true});
+const msheet=$("#msheet");$("#hamb").onclick=()=>msheet.classList.add("open");$("#mclose").onclick=$("#msheetBg").onclick=()=>msheet.classList.remove("open");
+$$("#msheet a").forEach(a=>a.onclick=()=>msheet.classList.remove("open"));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("in")),{threshold:.12});
+$$(".reveal").forEach(el=>io.observe(el));
+
+/* reels + insta render */
+$("#reelsRow").innerHTML=REELS.map((r,i)=>`<div class="fcard reveal" data-i="${i}"><img src="${r.img}" alt="${r.t}" loading="lazy"><span class="reel-top"><span class="ig-chip">◎ reelszen_</span></span><button class="playbtn" aria-label="Play ${r.t}">▶</button><div class="book-style"><small><b>${r.t}</b><br>${r.s}</small><button class="mini-book" data-style="${r.t}">Book this style</button></div></div>`).join("");
+$("#instaStrip").innerHTML=INSTA.map(id=>`<a href="https://www.instagram.com/reelszen_" target="_blank" rel="noopener"><img src="https://images.unsplash.com/${id}?q=80&w=400&auto=format&fit=crop" alt="ReelsZen Instagram" loading="lazy"></a>`).join("");
+$$("#reelsRow .reveal").forEach(el=>io.observe(el));
+
+/* lightbox */
+const lb=$("#lb");
+function openReel(i){const r=REELS[i];$("#lbImg").src=r.img;$("#lbTitle").textContent=r.t+" — "+r.s;lb.classList.add("open")}
+$("#lbClose").onclick=$("#lbBg").onclick=()=>lb.classList.remove("open");
+$("#reelsRow").addEventListener("click",e=>{
+  const b=e.target.closest("[data-style]");
+  if(b){openBook(null,b.dataset.style);return}
+  const c=e.target.closest(".fcard");if(c)openReel(+c.dataset.i);
+});
+$$("[data-reel]").forEach(b=>b.onclick=e=>{e.stopPropagation();openReel(+b.dataset.reel)});
+
+/* packages */
+let curTab="all";
+function renderPkgs(){
+  const list=PRICING.filter(p=>curTab==="all"||p.cat===curTab);
+  $("#pkgGrid").innerHTML=list.map(p=>`<div class="pkg ${p.hot?"hot":""} reveal in">
+    ${p.hot?'<span class="pkg-flag">★ Most booked</span>':""}
+    <h3>${p.name}</h3><p style="font-size:13.5px;opacity:.75">${p.blurb}</p>
+    <div class="pprice">${p.custom?"Custom":inr(p.price)+(p.per||"")+" <small>+ GST</small>"}</div>
+    ${p.custom?"":`<div class="adv">Reserve today: <b>${inr(p.adv)}</b> · Balance ${inr(p.price-p.adv)} before shoot</div>`}
+    <ul>${p.feats.map(f=>`<li>${f}</li>`).join("")}</ul>
+    ${p.custom?'<a class="btn-cta" href="#contact">Get a quote →</a>':`<button class="btn-cta" data-book data-pkg="${p.id}">Book Your Date →</button>`}
+  </div>`).join("");
+}
+renderPkgs();
+$("#tabs").addEventListener("click",e=>{const t=e.target.closest(".tab");if(!t)return;$$(".tab").forEach(x=>x.classList.remove("active"));t.classList.add("active");curTab=t.dataset.tab;renderPkgs()});
+document.addEventListener("click",e=>{
+  const g=e.target.closest("[data-goto-tab]");if(!g)return;
+  curTab=g.dataset.gotoTab;$$(".tab").forEach(x=>x.classList.toggle("active",x.dataset.tab===curTab));renderPkgs();
+});
+
+/* faq */
+$("#faqList").addEventListener("click",e=>{const q=e.target.closest(".faq-q");if(!q)return;const it=q.parentElement,open=it.classList.contains("open");$$(".faq-item").forEach(x=>{x.classList.remove("open");x.querySelector(".faq-a").style.maxHeight=null});if(!open){it.classList.add("open");const a=it.querySelector(".faq-a");a.style.maxHeight=a.scrollHeight+"px"}});
+
+/* contact → whatsapp */
+$("#contactForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  if($("#honey").value)return;
+  const ph=$("#cphone").value.replace(/\D/g,"");
+  if(!/^[6-9]\d{9}$/.test(ph))return toast("Enter a valid 10-digit mobile number");
+  const msg=`Hi ReelsZen! I'm ${$("#cname").value} — event on ${$("#cdate").value}. ${$("#cmsg").value} (Ph: ${ph})`;
+  open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
+  toast("Opening WhatsApp… we reply within hours on booking days");
+});
+
+/* legal */
+const LEGAL={
+ terms:{t:"Terms of Service",b:"<p>ReelsZen provides same-day vertical reel coverage in Hyderabad. Booking confirms when your advance payment succeeds — your date is then blocked for others. Balance is due before the shoot. Delivery is digital via WhatsApp/email. Raw footage is included on wedding plans as listed. Outstation travel is confirmed per booking.</p>"},
+ refund:{t:"Cancellation & Refund Policy",b:"<ul><li><b>Advance blocks the date.</b> Once paid, we decline all other enquiries for your date.</li><li><b>Reschedule once free</b> if your new date is open (7+ days notice).</li><li><b>Cancel 14+ days before:</b> 50% of advance refunded. <b>Within 14 days:</b> advance non-refundable (date cannot be re-sold).</li><li><b>If we cancel:</b> 100% refund within 5 working days.</li><li>Balance is due before the shoot; no shoot without cleared balance.</li></ul><p>Owner-approved policy — shown before payment, enforced exactly as written.</p>"},
+ privacy:{t:"Privacy Policy",b:"<p>We collect name, phone, email, event date and venue — only to fulfil your booking. Payments are handled solely by Razorpay; no card data touches our site. We never sell data. Reels are published only with your written permission. Contact us anytime to access or delete your data.</p>"}};
+document.addEventListener("click",e=>{const l=e.target.closest("[data-legal]");if(!l)return;e.preventDefault();const d=LEGAL[l.dataset.legal];$("#legalBody").innerHTML=`<h3>${d.t}</h3>${d.b}`;$("#legal").classList.add("open")});
+$$("[data-close-legal]").forEach(x=>x.onclick=()=>$("#legal").classList.remove("open"));
+
+/* ===== BOOKING ENGINE ===== */
+const overlay=$("#bookOverlay");
+let step=1, selOcc="Wedding", selPkg="wed1", selStyle="", selDate=null, viewY=new Date().getFullYear(), viewM=new Date().getMonth();
+const blocked=JSON.parse(localStorage.getItem("rz_blocked")||'["2026-11-14","2026-12-05"]'); // ponytail: sheet/admin is source of truth; localStorage is demo mirror
+const TITLES={1:"Occasion & package",2:"Date & venue",3:"Your details",4:"Price summary",5:"Pay advance"};
+
+function pkg(){return PRICING.find(p=>p.id===selPkg)}
+function openBook(presetPkg,style){
+  if(presetPkg)selPkg=presetPkg; if(style)selStyle=style;
+  step=1;renderPkgPick();showStep();overlay.classList.add("open");document.body.style.overflow="hidden";
+  $("#waFloat").href=`https://wa.me/${WA}?text=${encodeURIComponent("Hi ReelsZen! I was booking"+(selDate?" for "+selDate:"")+" — need help")}`;
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-book]");if(!b)return;e.preventDefault();openBook(b.dataset.pkg||null)});
+$("#bookClose").onclick=$("#bookBg").onclick=()=>{overlay.classList.remove("open");document.body.style.overflow=""};
+$("#doneClose").onclick=()=>{overlay.classList.remove("open");document.body.style.overflow=""};
+
+function renderPkgPick(){
+  $("#pkgPick").innerHTML=PRICING.filter(p=>!p.custom).map(p=>`<button class="opt ${p.id===selPkg?"sel":""}" data-p="${p.id}"><b>${p.name}</b><small>${p.blurb}</small><span class="op">${inr(p.price)} · reserve ${inr(p.adv)}</span></button>`).join("");
+}
+$("#pkgPick").addEventListener("click",e=>{const o=e.target.closest("[data-p]");if(!o)return;selPkg=o.dataset.p;renderPkgPick()});
+$("#occPick").addEventListener("click",e=>{const o=e.target.closest("[data-occ]");if(!o)return;selOcc=o.dataset.occ;$$("#occPick .opt").forEach(x=>x.classList.toggle("sel",x===o));
+  if(selOcc==="Business / Brand"){overlay.classList.remove("open");document.body.style.overflow="";location.hash="#contact";toast("Business plans are custom — tell us about your brief")} });
+
+function showStep(){
+  $$(".bstep").forEach(s=>s.classList.toggle("active",+s.dataset.step===step));
+  [...$("#stepsBar").children].forEach((b,i)=>{b.className=i<step-1?"done":i===step-1?"now":""});
+  $("#bookTitle").textContent=(selStyle?`“${selStyle}” style · `:"")+TITLES[step];
+  $("#stepBack").style.visibility=step===1?"hidden":"visible";
+  $("#stepNext").textContent=step===4?"Proceed to payment →":step===5?"Finish":"Continue →";
+  if(step===2)renderCal();
+  if(step===4)renderSum();
+  if(step===5)renderPay();
+}
+function valid(n){
+  if(n===1){if(selOcc==="Business / Brand")return false;return true}
+  if(n===2){if(!selDate)return toast("Pick a free date first"),false;
+    if(!$("#bVenue").value.trim())return toast("Add your venue / area"),false;return true}
+  if(n===3){if($("#bName").value.trim().length<2)return toast("Tell us your name"),false;
+    if(!/^[6-9]\d{9}$/.test($("#bPhone").value.replace(/\D/g,"")))return toast("Enter a valid 10-digit mobile"),false;return true}
+  if(n===4){if(!$("#policyOk").checked)return toast("Please accept the policy to continue"),false;return true}
+  return true;
+}
+$("#stepNext").onclick=()=>{if(step<5){if(!valid(step))return;step++;showStep()}else{$("#bookClose").click()}};
+$("#stepBack").onclick=()=>{if(step>1){step--;showStep()}};
+
+/* calendar */
+function renderCal(){
+  const first=new Date(viewY,viewM,1),startDay=first.getDay(),days=new Date(viewY,viewM+1,0).getDate();
+  $("#calLabel").textContent=first.toLocaleString("en-IN",{month:"long",year:"numeric"});
+  const today=new Date();today.setHours(0,0,0,0);
+  let h="";for(let i=0;i<startDay;i++)h+="<span></span>";
+  for(let d=1;d<=days;d++){
+    const dt=new Date(viewY,viewM,d),iso=dt.toISOString().slice(0,10);
+    const dis=dt<today||blocked.includes(iso);
+    h+=`<button class="dcell ${selDate===iso?"sel":""}" data-d="${iso}" ${dis?"disabled":""}>${d}</button>`;
+  }
+  $("#calGrid").innerHTML=h;
+}
+$("#calGrid").addEventListener("click",e=>{const c=e.target.closest("[data-d]");if(!c||c.disabled)return;selDate=c.dataset.d;$("#calNote").textContent="";renderCal()});
+$("#calPrev").onclick=()=>{viewM--;if(viewM<0){viewM=11;viewY--}renderCal()};
+$("#calNext").onclick=()=>{viewM++;if(viewM>11){viewM=0;viewY++}renderCal()};
+/* intercept blocked tap */
+$("#calGrid").addEventListener("click",e=>{},{capture:true});
+
+/* summary + pay */
+function money(p){const gst=Math.round(p.price*GST);return{gst,total:p.price+gst}}
+function renderSum(){
+  const p=pkg(),{gst,total}=money(p);
+  $("#sumBox").innerHTML=`
+   <div class="sum-row"><span>${p.name} <small style="color:var(--taupe)">· ${selOcc} · ${selDate||"—"}</small></span><span><b>${inr(p.price)}</b></span></div>
+   <div class="sum-row"><span>GST (18%)</span><span>${inr(gst)}</span></div>
+   <div class="sum-row total"><span>Total</span><span>${inr(total)}</span></div>
+   <div class="sum-row adv"><span>Advance due today (locks date)</span><span>${inr(p.adv)}</span></div>
+   <div class="sum-row"><span>Balance before shoot</span><span>${inr(total-p.adv)}</span></div>
+   <p style="font-size:12.5px;color:var(--taupe);margin-top:8px">Server-calculated at checkout — browser prices can never alter your total. One wedding booking per date; paid advance wins.</p>`;
+}
+function renderPay(){
+  const p=pkg(),{total}=money(p);
+  $("#paySum").innerHTML=`<div class="sum-row"><span>Paying now</span><span><b>${inr(p.adv)}</b></span></div><div class="sum-row"><span>For</span><span>${p.name} · ${selDate}</span></div><div class="sum-row"><span>Balance later</span><span>${inr(total-p.adv)}</span></div>`;
+  $("#payPane").style.display="block";$("#donePane").style.display="none";
+}
+$("#payBtn").onclick=()=>{
+  const btn=$("#payBtn");btn.textContent="Confirming with bank…";btn.disabled=true;
+  setTimeout(()=>{ // demo Razorpay success + webhook
+    btn.textContent="Pay advance securely →";btn.disabled=false;
+    const id="RZ-"+new Date().getFullYear()+"-"+Math.random().toString(36).slice(2,7).toUpperCase();
+    const p=pkg(),{total}=money(p);
+    blocked.push(selDate);localStorage.setItem("rz_blocked",JSON.stringify(blocked));
+    $("#payPane").style.display="none";$("#donePane").style.display="block";
+    $("#doneId").textContent="Booking ID: "+id+" · PAID "+inr(p.adv);
+    $("#doneDetail").textContent=`${$("#bName").value||"Guest"} · ${p.name} · ${selDate} · ${$("#bVenue").value||$("#bCity").value} · Balance ${inr(total-p.adv)} due before shoot. Confirmation sent to WhatsApp + email.`;
+    $("#doneWa").href=`https://wa.me/${WA}?text=${encodeURIComponent(`Hi ReelsZen! Date locked 🎉 ${id} — ${p.name} on ${selDate} at ${$("#bVenue").value}. Advance paid ${inr(p.adv)}. Balance ${inr(total-p.adv)} before shoot.`)}`;
+    toast("Advance paid — date locked 🔒");
+  },1600);
+};
+
+/* prefill ?package= */
+const qp=new URLSearchParams(location.search).get("package");
+if(qp&&PRICING.some(p=>p.id===qp)){selPkg=qp;renderPkgPick()}
+/* esc closes */
+addEventListener("keydown",e=>{if(e.key==="Escape"){overlay.classList.remove("open");lb.classList.remove("open");$("#legal").classList.remove("open");msheet.classList.remove("open");document.body.style.overflow=""}});
+/* GA4 + Pixel placeholders — paste IDs to go live
+   <!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"><\/script>
+   <!-- Meta Pixel -- fbq('track','ViewContent') on reels, 'InitiateCheckout' on book open, 'Purchase' on donePane */
+</script>
+</body>
+</html>

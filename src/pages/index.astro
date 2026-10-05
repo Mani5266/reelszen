@@ -1,0 +1,174 @@
+---
+import Base from '../layouts/Base.astro';
+import Curve from '../components/Curve.astro';
+import { PRICING, inr } from '../data/pricing';
+const teaser = PRICING.filter(p => ['quick','wed1','sig'].includes(p.id));
+const reels = [
+  { t: 'Aishwarya × Aditya', s: 'Wedding · Hyderabad', img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=70&w=500&auto=format&fit=crop' },
+  { t: 'Haldi Morning', s: 'Mehendi · Same-day cut', img: 'https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?q=70&w=500&auto=format&fit=crop' },
+  { t: 'Sangeet Night', s: 'Delivered same night', img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=70&w=500&auto=format&fit=crop' },
+  { t: 'Meher & Kabir', s: 'Wedding · Kompally', img: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?q=70&w=500&auto=format&fit=crop' },
+  { t: 'Boutique Launch', s: 'Brand · Jubilee Hills', img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=70&w=500&auto=format&fit=crop' },
+  { t: 'Festival Night', s: 'Event · Aftermovie', img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=70&w=500&auto=format&fit=crop' }
+];
+---
+<Base title="ReelsZen — Instant Wedding Reel Maker in Hyderabad | Reel Tonight" description="Your wedding reel. Delivered before the celebration ends. Shot on iPhone, edited on-site in Hyderabad. Reels from Rs. 1,999. Book in 3 minutes.">
+<!-- HERO — Flashoot rhythm, ReelsZen soul: centered cinema, own words, own palette -->
+<section class="sec-fade pt-[140px] sm:pt-[160px] pb-12 relative overflow-hidden text-center" style="background:radial-gradient(800px 380px at 50% -8%,rgba(224,123,36,.20),transparent 65%),radial-gradient(600px 300px at 50% 0%,rgba(201,162,75,.12),transparent 60%),linear-gradient(180deg,#14100B,#0E0D0B 60%,#0E0D0B)">
+  <div class="orb-p" data-parallax="0.12" style="width:min(480px,80vw);height:min(480px,80vw);background:rgba(224,123,36,.14);top:-140px;left:-140px" aria-hidden="true"></div>
+  <div class="orb-p" data-parallax="-0.08" style="width:min(420px,70vw);height:min(420px,70vw);background:rgba(201,162,75,.12);top:20%;right:-160px" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto px-5 relative">
+    <p class="reveal text-[12px] sm:text-[13px] font-bold tracking-[4px] uppercase text-ivory/50" data-delay="0">Shot on iPhone · Edited on-site · Hyderabad</p>
+    <h1 class="reveal font-sans font-extrabold leading-[1.04] mt-6" data-delay="90" style="font-size:clamp(38px,7vw,76px);letter-spacing:-.02em">Your wedding reel,<br /><span class="text-ivory/40">delivered </span><em class="grad-gold not-italic">before the night ends.</em></h1>
+    <p class="reveal text-ivory/70 mx-auto mt-6 max-w-[56ch]" data-delay="180" style="font-size:clamp(15px,2vw,18px)">A ReelsZen creator at your celebration to shoot, edit, and hand you post-ready reels <strong class="text-white">tonight</strong> — while everyone's still together.</p>
+    <div class="reveal flex flex-wrap justify-center gap-3.5 mt-9" data-delay="260">
+      <a href="/book" class="btn-cta !text-base !px-9 !py-4">Book Your Date <span aria-hidden="true">↗</span></a>
+      <a href="/packages" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 font-bold text-[15px] glass-card min-h-[54px] hover:border-gold transition-colors">View Packages <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="reveal mt-8 text-[11.5px] sm:text-[13.5px] font-bold tracking-[1px] sm:tracking-[2.5px] uppercase text-ivory/60 leading-relaxed" data-delay="340"><span class="text-gold mr-2">★ ★ ★</span>Same-night delivery · Raw footage included · One honest price</p>
+    <p class="reveal mt-5 text-[10.5px] sm:text-[11.5px] tracking-[1.5px] sm:tracking-[2.5px] uppercase text-ivory/35" data-delay="400">Hyderabad-first · No app, just the website · @reelszen_</p>
+  </div>
+  <div class="max-w-4xl mx-auto px-5 mt-12 text-left" style="perspective:1400px">
+      <div id="heroCar" class="flex gap-4 sm:gap-5 overflow-x-auto pb-6 pt-2 px-[calc(11vw-20px)] sm:px-[calc(50%-110px)] justify-start" style="scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;transform-style:preserve-3d">
+        {[0,1,2,3,4,5].map((n) => (
+          <div class="hero-slide relative rounded-[22px] overflow-hidden aspect-[9/16] border border-white/10 shadow-2xl flex-none w-[78vw] max-w-[360px] sm:w-[220px] sm:max-w-none" style="scroll-snap-align:center;will-change:transform;transition:border-color .35s">
+            <img src={reels[n].img} alt={reels[n].t} fetchpriority={n === 0 ? 'high' : undefined} loading={n === 0 ? 'eager' : 'lazy'} decoding="async" class="w-full h-full object-cover" width="500" height="889" />
+            <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.72))"></div>
+            <div class="absolute bottom-0 p-3.5 text-white"><b class="text-[13.5px] block">{reels[n].t}</b><small class="text-[11.5px] opacity-80">{reels[n].s}</small></div>
+          </div>
+        ))}
+      </div>
+      <div class="flex items-center gap-3 mt-4 justify-center">
+        <button id="carPrev" aria-label="Previous reels" class="w-11 h-11 rounded-full border border-white/20 glass-card grid place-items-center min-h-[44px]">←</button>
+        <button id="carNext" aria-label="Next reels" class="w-11 h-11 rounded-full border border-white/20 glass-card grid place-items-center min-h-[44px]">→</button>
+      </div>
+  </div>
+</section>
+<script>
+  const car = document.getElementById('heroCar');
+  const slides = car ? [...car.children] : [];
+  // coverflow 3D: cards bend away from center, front card lit with gold rim
+  function paint3D() {
+    if (!car) return;
+    const viewC = car.scrollLeft + car.clientWidth / 2;
+    slides.forEach((s) => {
+      const d = (s.offsetLeft + s.offsetWidth / 2 - viewC) / s.offsetWidth;
+      const cl = Math.max(-1.6, Math.min(1.6, d));
+      const a = Math.abs(cl);
+      s.style.transform = `translateZ(${(-Math.min(a * 140, 220)).toFixed(0)}px) rotateY(${(cl * 30).toFixed(2)}deg) scale(${(1 - Math.min(a * 0.14, 0.28)).toFixed(3)})`;
+      s.style.filter = `brightness(${(1 - Math.min(a * 0.3, 0.55)).toFixed(2)})`;
+      const front = a < 0.35;
+      s.style.borderColor = front ? 'rgba(201,162,75,.7)' : 'rgba(255,255,255,.1)';
+      s.style.boxShadow = front ? '0 30px 70px -20px rgba(201,162,75,.35)' : '';
+    });
+  }
+  let tick3d = false;
+  function queue3D() { if (!tick3d) { tick3d = true; requestAnimationFrame(() => { tick3d = false; paint3D(); }); } }
+  car?.addEventListener('scroll', queue3D, { passive: true });
+  addEventListener('resize', queue3D);
+  queue3D();
+  const stepBy = (dir) => {
+    const w = car?.querySelector('.hero-slide')?.offsetWidth;
+    car?.scrollBy({ left: dir * ((w || 224) + 16), behavior: 'smooth' });
+  };
+  document.getElementById('carPrev')?.addEventListener('click', () => stepBy(-1));
+  document.getElementById('carNext')?.addEventListener('click', () => stepBy(1));
+  // calm auto-play, pauses on touch/hover, off for reduced-motion
+  let auto = null;
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function startAuto() {
+    if (calm || auto) return;
+    auto = setInterval(() => {
+      if (!car || document.hidden) return;
+      const max = car.scrollWidth - car.clientWidth - 10;
+      if (car.scrollLeft >= max) car.scrollTo({ left: 0, behavior: 'smooth' });
+      else stepBy(1);
+    }, 4500);
+  }
+  function stopAuto() { clearInterval(auto); auto = null; }
+  car?.addEventListener('pointerenter', stopAuto);
+  car?.addEventListener('pointerleave', startAuto);
+  car?.addEventListener('touchstart', stopAuto, { passive: true });
+  startAuto();
+</script>
+<style>
+  #heroCar::-webkit-scrollbar { display: none; }
+  #heroCar { scroll-behavior: smooth; }
+</style>
+
+<!-- PROOF: qualitative only, never fake numbers -->
+<div class="sec-fade border-y border-white/10 bg-white/[.025]">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4">
+    {['Same-day delivery|first reel before your event ends','Shot + edited on-site|at your venue in Hyderabad','Raw footage included|on every wedding plan','Request in 3 minutes|we confirm on WhatsApp fast'].map(s => (
+      <div class="px-3 sm:px-5 py-5 sm:py-6 text-center border-l border-white/10 first:border-0"><b class="font-serif-d text-[17px] sm:text-xl text-goldlight block leading-snug">{s.split('|')[0]}</b><span class="text-[12px] sm:text-[13px] text-ivory/65">{s.split('|')[1]}</span></div>
+    ))}
+  </div>
+</div>
+
+<!-- SILK-DRAPE 1/4 · valley: dark cinema bows into ivory -->
+<Curve from="#0E0D0B" to="#F7F2EA" />
+
+<!-- HOW -->
+<section class="sec-fade bg-ivory text-char py-20 md:py-28"><div class="max-w-6xl mx-auto px-5">
+  <span class="reveal text-xs font-extrabold tracking-[3px] uppercase text-[#9a7a2e]">— How it works</span>
+  <h2 class="reveal font-serif-d mt-3 max-w-[20ch]" style="font-size:clamp(30px,4.4vw,50px)">Calm on the surface. <em class="text-[#9a7a2e]">Ruthless</em> underneath.</h2>
+  <div class="grid gap-4 md:grid-cols-4 mt-9" data-stagger>
+    {[['01','Book your date','Pick occasion + package, send a request. We confirm fast on WhatsApp.'],['02','We shoot on iPhone','Cinematic vertical coverage that never blocks your photographer.'],['03','Edited on-site','Our editor cuts live at the venue — colour and energy intact.'],['04','Delivered tonight','First reel on WhatsApp before the event ends.']].map((c,i) => (
+      <div class="reveal glass-light border border-sage/20 rounded-[20px] p-7 hover:-translate-y-1.5 transition-transform">
+        <div class="font-serif-d text-5xl text-transparent" style="-webkit-text-stroke:1.2px #5B6B5A">{c[0]}</div>
+        <h3 class="font-serif-d text-xl mt-3 mb-2">{c[1]}</h3><p class="text-sm text-char/70">{c[2]}</p>
+      </div>
+    ))}
+  </div>
+</div></section>
+
+<!-- SILK-DRAPE 2/4 · peak: ivory rises into the dark reels -->
+<Curve from="#F7F2EA" to="#0E0D0B" flip />
+
+<!-- REELS preview -->
+<section class="sec-fade py-20 md:py-28" style="background:linear-gradient(180deg,#0E0D0B,#171309 55%,#0E0D0B)"><div class="max-w-6xl mx-auto px-5">
+  <span class="reveal text-xs font-extrabold tracking-[3px] uppercase text-gold">— Featured reels · @reelszen_</span>
+  <h2 class="reveal font-serif-d mt-3" style="font-size:clamp(30px,4.4vw,50px)">Proof, not <em class="grad-gold">decoration.</em></h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 mt-8" data-stagger>
+    {reels.map(r => (
+      <a href="/book" class="reveal group relative rounded-[20px] overflow-hidden aspect-[9/14] border border-white/10 hover:border-gold transition-colors bg-[#1c1915]">
+        <img src={r.img} alt={r.t} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="500" height="778" />
+        <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))"></div>
+        <div class="absolute bottom-2.5 inset-x-2.5 sm:bottom-3 sm:inset-x-3 flex flex-col items-start gap-1.5"><small class="text-white text-xs font-bold leading-snug">{r.t}<br /><span class="opacity-70 font-normal hidden min-[400px]:inline">{r.s}</span></small><span class="text-[11px] sm:text-xs font-extrabold bg-white/15 border border-white/30 text-white px-3 py-1.5 sm:py-2 rounded-full">Book →</span></div>
+      </a>
+    ))}
+  </div>
+</div></section>
+
+<!-- SILK-DRAPE 3/4 · valley: dark bows back into ivory pricing -->
+<Curve from="#0E0D0B" to="#F7F2EA" />
+
+<!-- PACKAGES teaser -->
+<section class="sec-fade bg-ivory text-char py-20 md:py-28"><div class="max-w-6xl mx-auto px-5">
+  <span class="reveal text-xs font-extrabold tracking-[3px] uppercase text-[#9a7a2e]">— Packages &amp; pricing</span>
+  <h2 class="reveal font-serif-d mt-3" style="font-size:clamp(30px,4.4vw,50px)">One honest ladder.</h2>
+  <div class="grid gap-4 md:grid-cols-3 mt-8" data-stagger>
+    {teaser.map(p => (
+      <div class:list={['reveal bg-white rounded-3xl p-7 border-[1.5px] flex flex-col', p.hot ? 'border-gold text-ivory' : 'border-char/10']} style={p.hot ? 'background:linear-gradient(180deg,#171208,#241b0d)' : ''}>
+        {p.hot && <span class="text-[11px] font-extrabold tracking-wider bg-gradient-to-br from-gold to-marigold text-[#1a1206] px-4 py-1.5 rounded-full self-start -mt-11 mb-3">★ MOST BOOKED</span>}
+        <h3 class="font-serif-d text-[22px]">{p.name}</h3>
+        <div class="text-4xl font-extrabold tracking-tight mt-2">{inr(p.price)} <small class="text-sm font-semibold text-taupe">+ GST</small></div>
+        <div class="text-[13px] rounded-xl px-3.5 py-2.5 mt-3 bg-sagesoft text-char/80">Reserve today: <b>{inr(p.adv)}</b></div>
+        <ul class="my-4 flex-1">{p.feats.map(f => <li class="text-sm py-2 pl-7 relative border-b border-dashed border-char/10">✓ {f}</li>)}</ul>
+        <a href="/book" class="btn-cta justify-center w-full">Book Your Date →</a>
+      </div>
+    ))}
+  </div>
+  <div class="text-center mt-7"><a href="/packages" class="font-extrabold text-sm underline decoration-gold decoration-2 underline-offset-4">See all 7 plans + add-ons →</a></div>
+</div></section>
+
+<!-- SILK-DRAPE 4/4 · peak: ivory rises into the final night band -->
+<Curve from="#F7F2EA" to="#0E0D0B" flip />
+
+<!-- FINAL -->
+<section class="sec-fade text-center px-5 py-24" style="background:radial-gradient(700px 380px at 50% 120%,rgba(224,123,36,.28),transparent),#0E0D0B">
+  <span class="text-xs font-extrabold tracking-[3px] uppercase text-gold">— Dates go first in wedding season</span>
+  <h2 class="reveal font-serif-d mx-auto max-w-[18ch] mt-4" style="font-size:clamp(32px,5vw,56px)">Your reel. <em class="grad-gold">Tonight.</em> Requested in 3 minutes.</h2>
+  <div class="flex gap-3 justify-center flex-wrap mt-7 px-1"><a href="/book" class="btn-cta !text-base sm:!text-[17px] !px-7 sm:!px-9 !py-4 sm:!py-[17px] max-w-full">Book Your Date →</a><a href="/packages" class="inline-flex items-center px-6 py-3.5 rounded-full border border-white/25 font-bold text-sm glass-card min-h-[48px]">See honest prices</a></div>
+</section>
+</Base>

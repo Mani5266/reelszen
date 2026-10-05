@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+const reels = [
+  ['Aishwarya × Aditya','Wedding · Hyderabad','photo-1583939003579-730e3918a45a'],
+  ['Haldi Morning','Mehendi · Same-day','photo-1610173826608-bd1f53a52db1'],
+  ['Sangeet Night','Same night delivery','photo-1519741497674-611481863552'],
+  ['Meher & Kabir','Wedding · Kompally','photo-1606800052052-a08af7148866'],
+  ['Boutique Launch','Brand · Jubilee Hills','photo-1441986300917-64674bd600d8'],
+  ['Festival Night','Event · Aftermovie','photo-1492684223066-81342ee5ff30']
+];
+---
+<Base title="Portfolio Reels — ReelsZen Hyderabad | Real work, same-day cuts" description="Permission-cleared 9:16 reels: weddings, haldi, brands. Real proof, playing here.">
+<section class="pt-[120px] pb-24 min-h-screen" style="background:linear-gradient(180deg,#0E0D0B,#171309 55%,#0E0D0B)"><div class="max-w-6xl mx-auto px-5">
+  <span class="text-xs font-extrabold tracking-[3px] uppercase text-gold">— Portfolio · @reelszen_</span>
+  <h1 class="font-serif-d mt-3" style="font-size:clamp(34px,5vw,56px)">Proof, not <em class="grad-gold">decoration.</em></h1>
+  <p class="text-ivory/65 max-w-[60ch] mt-2">Real work only — published with permission. Every card books that style.</p>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3.5 md:gap-5 mt-8">
+    {reels.map(([t, s, id]) => (
+      <div class="relative rounded-[20px] overflow-hidden aspect-[9/14] border border-white/10 bg-[#1c1915]">
+        <img src={`https://images.unsplash.com/${id}?q=70&w=500&auto=format&fit=crop`} alt={t} loading="lazy" decoding="async" class="w-full h-full object-cover" width="500" height="778" />
+        <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))"></div>
+        <div class="absolute bottom-3 inset-x-3 flex justify-between items-center gap-2"><small class="text-white text-xs font-bold">{t}<br /><span class="opacity-70 font-normal">{s}</span></small><a href="/book" class="text-xs font-extrabold bg-white/15 border border-white/30 text-white px-3.5 py-2 rounded-full">Book →</a></div>
+      </div>
+    ))}
+  </div>
+</div></section>
+</Base>

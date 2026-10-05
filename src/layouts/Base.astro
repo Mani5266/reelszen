@@ -1,0 +1,166 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#0E0D0B" />
+  <!-- speed: preconnect once, display=swap, no render-blocking JS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" /></noscript>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://reelszen.in/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ReelsZen" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=75&w=1200&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <noscript><style>.reveal, .sec-fade { opacity: 1 !important; transform: none !important; } #fabPanel.fab-closed { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }</style></noscript>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ReelsZen","slogan":"Your wedding reel. Delivered before the celebration ends.","areaServed":"Hyderabad, Telangana","priceRange":"Rs. 1,999 - Rs. 59,999","sameAs":["https://www.instagram.com/reelszen_"]}</script>
+</head>
+<body class="bg-ink text-ivory">
+  <div id="pbar" aria-hidden="true"></div>
+  <header id="nav" class="fixed top-3 sm:top-4 inset-x-0 z-50 px-3 sm:px-5">
+    <div class="liquid-capsule max-w-6xl mx-auto pl-2.5 pr-2 sm:pl-4 sm:pr-2 h-[60px] sm:h-[66px] flex items-center justify-between gap-2 sm:gap-3">
+      <a href="/" class="flex items-center gap-2 pl-0.5 min-w-0" aria-label="ReelsZen home">
+        <span class="logo-ring w-9 h-9 sm:w-10 sm:h-10 rounded-2xl grid place-items-center font-serif-d font-bold text-lg sm:text-xl text-gold flex-none">R</span>
+        <span class="leading-none truncate"><span class="font-serif-d text-[17px] sm:text-xl">Reels<em class="text-goldlight not-italic">Zen</em></span><br /><span class="hidden min-[400px]:block text-[10px] tracking-[3px] text-taupe uppercase">Hyderabad · Same-day</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-1 text-sm font-bold text-ivory/75 bg-white/[.04] border border-white/10 rounded-full p-1.5" aria-label="Primary">
+        <a class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-colors" href="/packages">Packages</a>
+        <a class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-colors" href="/reels">Reels</a>
+        <a class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-colors" href="/about">About</a>
+        <a class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-colors" href="/contact">Contact</a>
+      </nav>
+      <div class="flex gap-1.5 sm:gap-2 items-center flex-none">
+        <a href="/book" class="btn-cta !py-2.5 !px-4 sm:!px-5 !text-[12.5px] sm:!text-[13.5px] !min-h-[44px] sm:!min-h-[46px] whitespace-nowrap shadow-[0_10px_30px_-6px_rgba(224,123,36,.65)]">Book Your Date</a>
+        <button id="mbtn" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu" class="md:hidden w-10 h-10 sm:w-11 sm:h-11 grid place-items-center rounded-full border border-white/15 bg-white/[.07] min-h-[44px] flex-none text-lg">☰</button>
+      </div>
+    </div>
+    <!-- mobile glass menu -->
+    <div id="mmenu" class="liquid-panel md:hidden hidden max-w-6xl mx-auto mt-2 p-3">
+      <nav class="flex flex-col text-[17px] font-extrabold" aria-label="Mobile">
+        <a class="px-5 py-4 rounded-2xl hover:bg-white/10 transition-colors" href="/">Home</a>
+        <a class="px-5 py-4 rounded-2xl hover:bg-white/10 transition-colors" href="/packages">Packages</a>
+        <a class="px-5 py-4 rounded-2xl hover:bg-white/10 transition-colors" href="/reels">Reels</a>
+        <a class="px-5 py-4 rounded-2xl hover:bg-white/10 transition-colors" href="/about">About</a>
+        <a class="px-5 py-4 rounded-2xl hover:bg-white/10 transition-colors" href="/contact">Contact</a>
+      </nav>
+      <a href="/book" class="btn-cta w-full justify-center mt-2">Book Your Date →</a>
+    </div>
+  </header>
+  <slot />
+  <footer class="bg-[#0A0908] border-t border-white/10 mt-0">
+    <div class="max-w-6xl mx-auto px-5 py-14 grid gap-8 md:grid-cols-4 text-sm text-ivory/70">
+      <div><b class="font-serif-d text-2xl text-white">Reels<em class="text-gold">Zen</em></b>
+        <p class="mt-2 max-w-[34ch]">Your wedding reel. Delivered before the celebration ends. Hyderabad.</p>
+        <a class="text-goldlight font-extrabold" href="https://www.instagram.com/reelszen_" target="_blank" rel="noopener">◎ @reelszen_</a></div>
+      <div><h5 class="text-white text-xs tracking-[2px] uppercase mb-3">Book</h5><a class="block py-1.5" href="/packages">Packages</a><a class="block py-1.5" href="/book">Book your date</a><a class="block py-1.5" href="/reels">Reels</a></div>
+      <div><h5 class="text-white text-xs tracking-[2px] uppercase mb-3">Company</h5><a class="block py-1.5" href="/about">About</a><a class="block py-1.5" href="/contact">Contact</a></div>
+      <div><h5 class="text-white text-xs tracking-[2px] uppercase mb-3">Legal</h5><a class="block py-1.5" href="/contact#policy">Cancellation &amp; Refund</a><a class="block py-1.5" href="/contact#policy">Privacy</a></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-5 pb-24 pt-4 border-t border-white/10 text-xs flex justify-between flex-wrap gap-2 text-ivory/50">
+      <span>© 2026 ReelsZen · Hyderabad</span><span>Reel tonight, not in 2 months.</span>
+    </div>
+  </footer>
+  <!-- speed-dial FAB: small at rest, actions slide out left on tap -->
+  <div class="fixed bottom-4 right-3 sm:bottom-5 sm:right-4 z-40 flex items-center gap-2.5">
+    <div id="fabPanel" class="fab-closed flex flex-col gap-2 w-[178px] sm:w-[210px]">
+      <a href="/book" class="flex items-center gap-2.5 sm:gap-3 pl-1.5 sm:pl-2 pr-3 sm:pr-4 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-sm font-extrabold text-ivory border border-white/15 min-h-[50px] sm:min-h-[54px]" style="background:rgba(20,17,12,.72);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 14px 36px -10px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.18)" aria-label="Book now">
+        <span class="w-10 h-10 rounded-full grid place-items-center flex-none text-[#1a1206]" style="background:linear-gradient(135deg,#C9A24B,#E07B24)">📅</span> Book Now</a>
+      <a href="https://wa.me/919182667127?text=Hi%20ReelsZen!%20Is%20my%20date%20free%3F" target="_blank" rel="noopener" class="flex items-center gap-2.5 sm:gap-3 pl-1.5 sm:pl-2 pr-3 sm:pr-4 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-sm font-extrabold text-ivory border border-white/15 min-h-[50px] sm:min-h-[54px]" style="background:rgba(20,17,12,.72);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 14px 36px -10px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.18);transition-delay:60ms" aria-label="Chat on WhatsApp">
+        <span class="w-10 h-10 rounded-full bg-[#1FA855] text-white grid place-items-center flex-none">✆</span> <span class="leading-tight">Chat on<br />WhatsApp</span></a>
+    </div>
+    <button id="fabBtn" aria-expanded="false" aria-label="Open quick actions" class="w-14 h-14 rounded-full grid place-items-center text-xl flex-none text-[#1a1206]" style="background:linear-gradient(135deg,#C9A24B,#E07B24);box-shadow:0 14px 34px -8px rgba(224,123,36,.65),inset 0 1px 0 rgba(255,255,255,.5)">📅</button>
+  </div>
+  <script>
+    // premium scroll in <1.5KB: progress hairline + staggered reveals + calm parallax. No lib.
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const nav = document.getElementById('nav');
+    const pbar = document.getElementById('pbar');
+    // cascade: [data-stagger] children rise one after another; [data-delay] sets exact ms
+    document.querySelectorAll('[data-stagger]').forEach((p) => {
+      [...p.children].forEach((c, i) => { c.style.transitionDelay = Math.min(i * 90, 540) + 'ms'; });
+    });
+    document.querySelectorAll('[data-delay]').forEach((el) => { el.style.transitionDelay = el.dataset.delay + 'ms'; });
+    const io = new IntersectionObserver(
+      (es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+    );
+    document.querySelectorAll('.reveal, .sec-fade').forEach((el) => io.observe(el));
+    // parallax + progress, single rAF-ticked passive listener
+    const plx = calm ? [] : [...document.querySelectorAll('[data-parallax]')];
+    let tick = false;
+    function onScroll() {
+      nav?.classList.toggle('scrolled', scrollY > 24);
+      const max = document.documentElement.scrollHeight - innerHeight;
+      if (pbar && max > 0) pbar.style.transform = `scaleX(${Math.min(scrollY / max, 1)})`;
+      if (!tick) {
+        tick = true;
+        requestAnimationFrame(() => {
+          tick = false;
+          const vh = innerHeight;
+          plx.forEach((el) => {
+            const r = el.getBoundingClientRect();
+            if (r.bottom < -100 || r.top > vh + 100) return;
+            const off = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallax);
+            el.style.transform = `translate3d(0,${off.toFixed(1)}px,0)`;
+          });
+        });
+      }
+    }
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    // mobile glass menu: real toggle, not a link
+    const mbtn = document.getElementById('mbtn');
+    const mmenu = document.getElementById('mmenu');
+    function setMenu(open) {
+      mmenu?.classList.toggle('hidden', !open);
+      mbtn?.setAttribute('aria-expanded', String(open));
+      mbtn?.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (mbtn) mbtn.textContent = open ? '✕' : '☰';
+    }
+    mbtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setMenu(mmenu?.classList.contains('hidden'));
+    });
+    mmenu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('click', (e) => {
+      if (!mmenu?.classList.contains('hidden') && !e.target.closest('#mmenu') && !e.target.closest('#mbtn')) setMenu(false);
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+    // speed-dial FAB
+    const fabBtn = document.getElementById('fabBtn');
+    const fabPanel = document.getElementById('fabPanel');
+    function setFab(open) {
+      fabPanel?.classList.toggle('fab-closed', !open);
+      fabBtn?.setAttribute('aria-expanded', String(open));
+      fabBtn?.setAttribute('aria-label', open ? 'Close quick actions' : 'Open quick actions');
+      if (fabBtn) fabBtn.textContent = open ? '✕' : '📅';
+    }
+    fabBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setFab(fabPanel?.classList.contains('fab-closed'));
+    });
+    fabPanel?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setFab(false)));
+    document.addEventListener('click', (e) => {
+      if (fabPanel && !fabPanel.classList.contains('fab-closed') && !e.target.closest('#fabPanel') && !e.target.closest('#fabBtn')) setFab(false);
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setFab(false); });
+  </script>
+</body>
+</html>

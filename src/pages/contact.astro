@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Contact ReelsZen — Hyderabad | Replies in hours on booking days" description="Tell us your date + venue. WhatsApp-first contact, Hyderabad primary, outstation on request.">
+<section class="pt-[120px] pb-24 min-h-screen" style="background:#EFE7D8"><div class="max-w-6xl mx-auto px-5">
+  <span class="text-xs font-extrabold tracking-[3px] uppercase text-[#9a7a2e]">— Contact</span>
+  <h1 class="font-serif-d text-char mt-3" style="font-size:clamp(34px,5vw,56px)">Talk to a human. Fast.</h1>
+  <div class="grid gap-5 lg:grid-cols-2 mt-8">
+    <form id="cform" class="bg-white rounded-3xl p-7 border border-char/10 text-char">
+      <label class="block text-[13px] font-extrabold mb-1.5">Your name<input id="cname" required placeholder="e.g. Ananya" class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5] min-h-[52px]" /></label>
+      <div class="grid grid-cols-1 min-[380px]:grid-cols-2 gap-3 mt-3">
+        <label class="block text-[13px] font-extrabold">WhatsApp<input id="cphone" inputmode="numeric" maxlength="10" required placeholder="10-digit" class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5] min-h-[52px]" /></label>
+        <label class="block text-[13px] font-extrabold">Event date<input id="cdate" type="date" required class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5] min-h-[52px]" /></label>
+      </div>
+      <label class="block text-[13px] font-extrabold mt-3">Message<textarea id="cmsg" rows="4" placeholder="Venue, functions…" class="mt-1.5 w-full px-4 py-3.5 rounded-xl border-[1.5px] border-char/15 bg-[#FCFAF5]"></textarea></label>
+      <button class="btn-cta w-full justify-center mt-4" type="submit">Send on WhatsApp →</button>
+    </form>
+    <div class="rounded-3xl p-8 text-ivory border border-gold/25" style="background:linear-gradient(180deg,#171208,#0E0D0B)">
+      <p class="font-bold">✆ Call / WhatsApp</p><p class="text-sm text-ivory/70 mb-4">Tap green button — number lives in our Instagram bio.</p>
+      <p class="font-bold">◎ Instagram</p><a class="text-goldlight font-extrabold" href="https://www.instagram.com/reelszen_" target="_blank" rel="noopener">@reelszen_</a>
+      <p class="font-bold mt-4">◉ Service area</p><p class="text-sm text-ivory/70">Hyderabad + outstation on request.</p>
+      <a href="/book" class="btn-cta w-full justify-center mt-6">Check My Date →</a>
+      <div id="policy" class="mt-6 text-[13px] text-ivory/70 border-t border-white/10 pt-4"><b class="text-white">Cancellation:</b> reschedule once free if date open · cancel 14+ days: 50% advance back · within 14 days: advance held · we cancel: 100% back in 5 days.</div>
+    </div>
+  </div>
+</div></section>
+<script>
+  document.getElementById('cform')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const ph = ((document.getElementById('cphone') as HTMLInputElement).value || '').replace(/\D/g, '');
+    if (!/^[6-9]\d{9}$/.test(ph)) return alert('Enter a valid 10-digit mobile number');
+    const msg = `Hi ReelsZen! I'm ${(document.getElementById('cname') as HTMLInputElement).value} — event on ${(document.getElementById('cdate') as HTMLInputElement).value}. ${(document.getElementById('cmsg') as HTMLTextAreaElement).value}`;
+    open('https://wa.me/919182667127?text=' + encodeURIComponent(msg), '_blank');
+  });
+</script>
+</Base>
