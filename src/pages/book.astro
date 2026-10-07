@@ -62,7 +62,7 @@ const bookable = PRICING.filter(p => !p.custom);
 
   function paintPkgs() { document.querySelectorAll('.pkgbtn').forEach(b => {
     const on = b.dataset.p === selPkg;
-    b.style.borderColor = on ? '#E07B24' : ''; b.style.background = on ? '#FFF8EC' : '';
+    b.style.borderColor = on ? '#A87F2E' : ''; b.style.background = on ? '#FFF8EC' : '';
   }); }
   paintPkgs();
   document.getElementById('pkgPick')?.addEventListener('click', e => {
@@ -70,7 +70,7 @@ const bookable = PRICING.filter(p => !p.custom);
   });
   document.getElementById('occPick')?.addEventListener('click', e => {
     const b = e.target.closest('[data-occ]'); if (!b) return; selOcc = b.dataset.occ;
-    document.querySelectorAll('#occPick button').forEach(x => { x.style.borderColor = x === b ? '#E07B24' : ''; x.style.background = x === b ? '#FFF8EC' : ''; });
+    document.querySelectorAll('#occPick button').forEach(x => { x.style.borderColor = x === b ? '#A87F2E' : ''; x.style.background = x === b ? '#FFF8EC' : ''; });
     if (selOcc === 'Business / Brand') { location.href = '/contact'; }
   });
 

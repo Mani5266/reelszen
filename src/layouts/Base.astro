@@ -30,7 +30,7 @@ const { title, description } = Astro.props;
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <noscript><style>.reveal, .sec-fade { opacity: 1 !important; transform: none !important; } #fabPanel.fab-closed { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }</style></noscript>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ReelsZen","slogan":"Your wedding reel. Delivered before the celebration ends.","areaServed":"Hyderabad, Telangana","priceRange":"Rs. 1,999 - Rs. 59,999","sameAs":["https://www.instagram.com/reelszen_"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ReelsZen","slogan":"Your wedding reel. Delivered before the celebration ends.","areaServed":"Hyderabad, Telangana","priceRange":"Rs. 1,499 - Rs. 59,999","sameAs":["https://www.instagram.com/reelszen_"]}</script>
 </head>
 <body class="bg-ink text-ivory">
   <div id="pbar" aria-hidden="true"></div>
@@ -47,7 +47,7 @@ const { title, description } = Astro.props;
         <a class="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-colors" href="/contact">Contact</a>
       </nav>
       <div class="flex gap-1.5 sm:gap-2 items-center flex-none">
-        <a href="/book" class="btn-cta !py-2.5 !px-4 sm:!px-5 !text-[12.5px] sm:!text-[13.5px] !min-h-[44px] sm:!min-h-[46px] whitespace-nowrap shadow-[0_10px_30px_-6px_rgba(224,123,36,.65)]">Book Your Date</a>
+        <a href="/book" class="btn-cta !py-2.5 !px-4 sm:!px-5 !text-[12.5px] sm:!text-[13.5px] !min-h-[44px] sm:!min-h-[46px] whitespace-nowrap shadow-[0_10px_30px_-6px_rgba(168,127,46,.6)]">Book Your Date</a>
         <button id="mbtn" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu" class="md:hidden w-10 h-10 sm:w-11 sm:h-11 grid place-items-center rounded-full border border-white/15 bg-white/[.07] min-h-[44px] flex-none text-lg">☰</button>
       </div>
     </div>
@@ -81,11 +81,11 @@ const { title, description } = Astro.props;
   <div class="fixed bottom-4 right-3 sm:bottom-5 sm:right-4 z-40 flex items-center gap-2.5">
     <div id="fabPanel" class="fab-closed flex flex-col gap-2 w-[178px] sm:w-[210px]">
       <a href="/book" class="flex items-center gap-2.5 sm:gap-3 pl-1.5 sm:pl-2 pr-3 sm:pr-4 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-sm font-extrabold text-ivory border border-white/15 min-h-[50px] sm:min-h-[54px]" style="background:rgba(20,17,12,.72);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 14px 36px -10px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.18)" aria-label="Book now">
-        <span class="w-10 h-10 rounded-full grid place-items-center flex-none text-[#1a1206]" style="background:linear-gradient(135deg,#C9A24B,#E07B24)">📅</span> Book Now</a>
+        <span class="w-10 h-10 rounded-full grid place-items-center flex-none text-[#1a1206]" style="background:linear-gradient(135deg,#EBD096,#C9A24B)">📅</span> Book Now</a>
       <a href="https://wa.me/919182667127?text=Hi%20ReelsZen!%20Is%20my%20date%20free%3F" target="_blank" rel="noopener" class="flex items-center gap-2.5 sm:gap-3 pl-1.5 sm:pl-2 pr-3 sm:pr-4 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-sm font-extrabold text-ivory border border-white/15 min-h-[50px] sm:min-h-[54px]" style="background:rgba(20,17,12,.72);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 14px 36px -10px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.18);transition-delay:60ms" aria-label="Chat on WhatsApp">
         <span class="w-10 h-10 rounded-full bg-[#1FA855] text-white grid place-items-center flex-none">✆</span> <span class="leading-tight">Chat on<br />WhatsApp</span></a>
     </div>
-    <button id="fabBtn" aria-expanded="false" aria-label="Open quick actions" class="w-14 h-14 rounded-full grid place-items-center text-xl flex-none text-[#1a1206]" style="background:linear-gradient(135deg,#C9A24B,#E07B24);box-shadow:0 14px 34px -8px rgba(224,123,36,.65),inset 0 1px 0 rgba(255,255,255,.5)">📅</button>
+    <button id="fabBtn" aria-expanded="false" aria-label="Open quick actions" class="w-14 h-14 rounded-full grid place-items-center text-xl flex-none text-[#1a1206]" style="background:linear-gradient(135deg,#EBD096,#C9A24B);box-shadow:0 14px 34px -8px rgba(168,127,46,.6),inset 0 1px 0 rgba(255,255,255,.5)">📅</button>
   </div>
   <script>
     // premium scroll in <1.5KB: progress hairline + staggered reveals + calm parallax. No lib.

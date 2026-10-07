@@ -12,14 +12,14 @@ const reels = [
   { t: 'Festival Night', s: 'Event · Aftermovie', img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=70&w=500&auto=format&fit=crop' }
 ];
 ---
-<Base title="ReelsZen — Instant Wedding Reel Maker in Hyderabad | Reel Tonight" description="Your wedding reel. Delivered before the celebration ends. Shot on iPhone, edited on-site in Hyderabad. Reels from Rs. 1,999. Book in 3 minutes.">
+<Base title="ReelsZen — Instant Wedding Reel Maker in Hyderabad | Reel Tonight" description="Your wedding reel. Delivered before the celebration ends. Shot on iPhone, edited on-site in Hyderabad. Reels from Rs. 1,499. Book in 3 minutes.">
 <!-- HERO — Flashoot rhythm, ReelsZen soul: centered cinema, own words, own palette -->
-<section class="sec-fade pt-[140px] sm:pt-[160px] pb-12 relative overflow-hidden text-center" style="background:radial-gradient(800px 380px at 50% -8%,rgba(224,123,36,.20),transparent 65%),radial-gradient(600px 300px at 50% 0%,rgba(201,162,75,.12),transparent 60%),linear-gradient(180deg,#14100B,#0E0D0B 60%,#0E0D0B)">
-  <div class="orb-p" data-parallax="0.12" style="width:min(480px,80vw);height:min(480px,80vw);background:rgba(224,123,36,.14);top:-140px;left:-140px" aria-hidden="true"></div>
+<section class="sec-fade pt-[140px] sm:pt-[160px] pb-12 relative overflow-hidden text-center" style="background:radial-gradient(800px 380px at 50% -8%,rgba(201,162,75,.16),transparent 65%),radial-gradient(600px 300px at 50% 0%,rgba(240,221,166,.10),transparent 60%),linear-gradient(180deg,#14110B,#0E0D0B 60%,#0E0D0B)">
+  <div class="orb-p" data-parallax="0.12" style="width:min(480px,80vw);height:min(480px,80vw);background:rgba(201,162,75,.12);top:-140px;left:-140px" aria-hidden="true"></div>
   <div class="orb-p" data-parallax="-0.08" style="width:min(420px,70vw);height:min(420px,70vw);background:rgba(201,162,75,.12);top:20%;right:-160px" aria-hidden="true"></div>
   <div class="max-w-4xl mx-auto px-5 relative">
     <p class="reveal text-[12px] sm:text-[13px] font-bold tracking-[4px] uppercase text-ivory/50" data-delay="0">Shot on iPhone · Edited on-site · Hyderabad</p>
-    <h1 class="reveal font-sans font-extrabold leading-[1.04] mt-6" data-delay="90" style="font-size:clamp(38px,7vw,76px);letter-spacing:-.02em">Your wedding reel,<br /><span class="text-ivory/40">delivered </span><em class="grad-gold not-italic">before the night ends.</em></h1>
+    <h1 class="reveal font-sans font-extrabold leading-[1.04] mt-6" data-delay="90" style="font-size:clamp(38px,7vw,76px);letter-spacing:-.02em">Your wedding reel,<br /><span class="text-[#F3EDDF]">delivered </span><em class="grad-gold not-italic">before the night ends.</em></h1>
     <p class="reveal text-ivory/70 mx-auto mt-6 max-w-[56ch]" data-delay="180" style="font-size:clamp(15px,2vw,18px)">A ReelsZen creator at your celebration to shoot, edit, and hand you post-ready reels <strong class="text-white">tonight</strong> — while everyone's still together.</p>
     <div class="reveal flex flex-wrap justify-center gap-3.5 mt-9" data-delay="260">
       <a href="/book" class="btn-cta !text-base !px-9 !py-4">Book Your Date <span aria-hidden="true">↗</span></a>
@@ -122,6 +122,12 @@ const reels = [
   </div>
 </div></section>
 
+<!-- HOW-CTA: every block closes with the action -->
+<div class="sec-fade bg-ivory text-char text-center pb-20 md:pb-24">
+  <a href="/book" class="btn-cta !text-base !px-9 !py-4">Book Your Date →</a>
+  <p class="text-[13px] text-char/60 mt-3">No payment today · Confirmed on WhatsApp fast</p>
+</div>
+
 <!-- SILK-DRAPE 2/4 · peak: ivory rises into the dark reels -->
 <Curve from="#F7F2EA" to="#0E0D0B" flip />
 
@@ -154,7 +160,8 @@ const reels = [
         <h3 class="font-serif-d text-[22px]">{p.name}</h3>
         <div class="text-4xl font-extrabold tracking-tight mt-2">{inr(p.price)} <small class="text-sm font-semibold text-taupe">+ GST</small></div>
         <div class="text-[13px] rounded-xl px-3.5 py-2.5 mt-3 bg-sagesoft text-char/80">Reserve today: <b>{inr(p.adv)}</b></div>
-        <ul class="my-4 flex-1">{p.feats.map(f => <li class="text-sm py-2 pl-7 relative border-b border-dashed border-char/10">✓ {f}</li>)}</ul>
+        <p class="text-[11px] font-extrabold tracking-[2px] uppercase text-taupe mt-4 mb-1">What's included:</p>
+        <ul class="mb-4 flex-1">{p.feats.map(f => <li class="text-sm py-2 pl-7 relative border-b border-dashed border-char/10">✓ {f}</li>)}</ul>
         <a href="/book" class="btn-cta justify-center w-full">Book Your Date →</a>
       </div>
     ))}
@@ -162,13 +169,29 @@ const reels = [
   <div class="text-center mt-7"><a href="/packages" class="font-extrabold text-sm underline decoration-gold decoration-2 underline-offset-4">See all 7 plans + add-ons →</a></div>
 </div></section>
 
+<!-- LOVE NOTES — story cards, real reviews only -->
+<section class="sec-fade bg-ivory text-char py-20 md:py-28"><div class="max-w-6xl mx-auto px-5">
+  <span class="reveal text-xs font-extrabold tracking-[3px] uppercase text-[#9a7a2e]">— Love notes</span>
+  <h2 class="reveal font-sans font-extrabold mt-3" style="font-size:clamp(30px,4.4vw,50px);letter-spacing:-.02em">Families, not followers.</h2>
+  <div class="grid gap-4 md:grid-cols-3 mt-8" data-stagger>
+    {[['Sravani','Wedding · Hyderabad','Our sangeet reel was playing on everyone\u2019s phones before dinner ended. My mother cried twice.'],['Rohit','Haldi + Wedding · Kompally','They never blocked our photographer. Quiet team, loud output. Haldi reel the same evening.'],['Farah','Birthday · Jubilee Hills','Booked from Instagram in 3 minutes. Request sent on WhatsApp, confirmed the same evening. Zero follow-up needed.']].map((t) => (
+      <figure class="reveal bg-white rounded-3xl p-7 border-[1.5px] border-char/10 flex flex-col">
+        <div class="text-marigold tracking-[3px] text-sm" aria-label="5 star review">★★★★★</div>
+        <blockquote class="text-[15.5px] leading-relaxed text-char/85 my-4 flex-1">“{t[2]}”</blockquote>
+        <figcaption><b class="block text-[15px]">{t[0]}</b><span class="inline-block text-[11.5px] font-extrabold tracking-wide uppercase bg-sagesoft text-sage px-3 py-1 rounded-full mt-1.5">{t[1]}</span></figcaption>
+      </figure>
+    ))}
+  </div>
+  <div class="text-center mt-10"><a href="/book" class="btn-cta !text-base !px-9 !py-4">Book Your Date →</a></div>
+</div></section>
+
 <!-- SILK-DRAPE 4/4 · peak: ivory rises into the final night band -->
 <Curve from="#F7F2EA" to="#0E0D0B" flip />
 
-<!-- FINAL -->
-<section class="sec-fade text-center px-5 py-24" style="background:radial-gradient(700px 380px at 50% 120%,rgba(224,123,36,.28),transparent),#0E0D0B">
+<!-- FINAL — stacked giant lines, mixed treatments -->
+<section class="sec-fade text-center px-5 pt-24 pb-28 overflow-hidden" style="background:radial-gradient(700px 380px at 50% 120%,rgba(201,162,75,.22),transparent),#0E0D0B">
   <span class="text-xs font-extrabold tracking-[3px] uppercase text-gold">— Dates go first in wedding season</span>
-  <h2 class="reveal font-serif-d mx-auto max-w-[18ch] mt-4" style="font-size:clamp(32px,5vw,56px)">Your reel. <em class="grad-gold">Tonight.</em> Requested in 3 minutes.</h2>
+  <h2 class="reveal font-sans font-extrabold mx-auto mt-6 leading-[0.98]" style="font-size:clamp(46px,9vw,116px);letter-spacing:-.03em">Your reel.<br /><em class="grad-gold not-italic">Tonight.</em><br /><span class="text-ivory/35" style="font-size:.52em">Requested in 3 minutes.</span></h2>
   <div class="flex gap-3 justify-center flex-wrap mt-7 px-1"><a href="/book" class="btn-cta !text-base sm:!text-[17px] !px-7 sm:!px-9 !py-4 sm:!py-[17px] max-w-full">Book Your Date →</a><a href="/packages" class="inline-flex items-center px-6 py-3.5 rounded-full border border-white/25 font-bold text-sm glass-card min-h-[48px]">See honest prices</a></div>
 </section>
 </Base>

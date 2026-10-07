@@ -5,14 +5,14 @@
 /* Midnight Zen tokens + Apple glass + slow luxury motion.
    Critical CSS inlined by Astro (inlineStylesheets:auto). Non-critical deferred. */
 :root {
-  --ink: #0e0d0b; --ivory: #f7f2ea; --gold: #c9a24b; --gold-l: #e8cb85;
-  --mari: #e07b24; --sage: #5b6b5a; --char: #241e1a;
-  --cta: linear-gradient(135deg, #c9a24b, #e07b24);
+  --ink: #0e0d0b; --ivory: #faf6ee; --gold: #c9a24b; --gold-l: #f0dda6;
+  --mari: #a87f2e; --sage: #5b6b5a; --char: #241e1a;
+  --cta: linear-gradient(135deg, #ebd096, #c9a24b);
 }
 html { scroll-behavior: smooth; }
 body { font-family: Manrope, system-ui, sans-serif; background: var(--ink); -webkit-font-smoothing: antialiased; }
 .font-serif-d { font-family: Manrope, system-ui, sans-serif; letter-spacing: -0.01em; }
-.grad-gold { background: linear-gradient(100deg, #e8cb85, #c9a24b 45%, #e07b24); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad-gold { background: linear-gradient(100deg, #f6eac3, #d9b968 50%, #a87f2e); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 /* Apple liquid-glass capsule — floating pill, refraction edge, specular top light */
 .liquid-capsule {
@@ -77,7 +77,7 @@ body { font-family: Manrope, system-ui, sans-serif; background: var(--ink); -web
   display: inline-flex; align-items: center; gap: 10px; background: var(--cta);
   color: #1a1206; font-weight: 800; padding: 14px 28px; border-radius: 999px;
   min-height: 48px; position: relative; overflow: hidden;
-  box-shadow: 0 10px 30px -8px rgba(224, 123, 36, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px -8px rgba(168, 127, 46, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transition: transform 0.25s, box-shadow 0.25s;
 }
 .btn-cta::before {
@@ -103,7 +103,7 @@ body { font-family: Manrope, system-ui, sans-serif; background: var(--ink); -web
 #fabBtn:active { transform: scale(0.96); }
 #pbar { position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 60;
   transform: scaleX(0); transform-origin: 0 50%;
-  background: linear-gradient(90deg, #c9a24b, #e07b24); }
+  background: linear-gradient(90deg, #d9b968, #a87f2e); }
 .orb-p { position: absolute; border-radius: 9999px; filter: blur(90px); pointer-events: none; }
 [data-parallax] { will-change: transform; }
 
