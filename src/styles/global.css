@@ -92,7 +92,12 @@ body { font-family: Manrope, system-ui, sans-serif; background: var(--ink); -web
 .sec-fade { opacity: 0; transition: opacity 0.9s ease; }
 .sec-fade.in { opacity: 1; }
 
-/* premium scroll: progress hairline, parallax helpers */
+/* reserve box: solid hex only — slash-opacity utilities vanish on older webviews */
+.adv { font-size: 13px; border-radius: 12px; padding: 10px 14px; margin-top: 12px;
+  background: #e8ece3; color: #3d4a3c; }
+.adv b { color: #1f2a1e; }
+.adv-hot { background: #2b2314; color: #f0dda6; }
+.adv-hot b { color: #f6eac3; }
 /* speed-dial FAB: actions rest hidden right, slide out left on tap */
 #fabPanel { transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.12), opacity 0.28s ease; }
 #fabPanel a { transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.12), opacity 0.28s ease; }

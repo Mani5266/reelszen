@@ -159,7 +159,7 @@ const reels = [
         {p.hot && <span class="text-[11px] font-extrabold tracking-wider bg-gradient-to-br from-gold to-marigold text-[#1a1206] px-4 py-1.5 rounded-full self-start -mt-11 mb-3">★ MOST BOOKED</span>}
         <h3 class="font-serif-d text-[22px]">{p.name}</h3>
         <div class="text-4xl font-extrabold tracking-tight mt-2">{inr(p.price)} <small class="text-sm font-semibold text-taupe">+ GST</small></div>
-        <div class="text-[13px] rounded-xl px-3.5 py-2.5 mt-3 bg-sagesoft text-char/80">Reserve today: <b>{inr(p.adv)}</b></div>
+        <div class:list={['adv', p.hot && 'adv-hot']}>Reserve today: <b>{inr(p.adv)}</b></div>
         <p class="text-[11px] font-extrabold tracking-[2px] uppercase text-taupe mt-4 mb-1">What's included:</p>
         <ul class="mb-4 flex-1">{p.feats.map(f => <li class="text-sm py-2 pl-7 relative border-b border-dashed border-char/10">✓ {f}</li>)}</ul>
         <a href="/book" class="btn-cta justify-center w-full">Book Your Date →</a>

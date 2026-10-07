@@ -15,7 +15,7 @@ import { PRICING, inr } from '../data/pricing';
       <div data-cat={p.cat} class:list={['bg-white rounded-3xl p-7 border-[1.5px] flex flex-col pkg', p.hot ? 'border-gold text-ivory' : 'border-char/10']} style={p.hot ? 'background:linear-gradient(180deg,#171208,#241b0d)' : ''}>
         <h3 class="font-serif-d text-[22px]">{p.name}</h3><p class="text-[13.5px] opacity-75">{p.blurb}</p>
         <div class="text-4xl font-extrabold tracking-tight mt-2">{p.custom ? 'Custom' : inr(p.price)} {!p.custom && <small class="text-sm font-semibold text-taupe">+ GST</small>}</div>
-        {!p.custom && <div class="text-[13px] rounded-xl px-3.5 py-2.5 mt-3 bg-sagesoft">Reserve today: <b>{inr(p.adv)}</b> · Balance {inr(p.price - p.adv)} before shoot</div>}
+        {!p.custom && <div class:list={['adv', p.hot && 'adv-hot']}>Reserve today: <b>{inr(p.adv)}</b> · Balance {inr(p.price - p.adv)} before shoot</div>}
         <p class="text-[11px] font-extrabold tracking-[2px] uppercase text-taupe mt-4 mb-1">What's included:</p>
         <ul class="mb-4 flex-1">{p.feats.map(f => <li class="text-sm py-2 border-b border-dashed border-char/10">{f}</li>)}</ul>
         {p.custom ? <a class="btn-cta justify-center w-full" href="/contact">Get a quote →</a> : <a class="btn-cta justify-center w-full" href={`/book?package=${p.id}`}>Book Your Date →</a>}
