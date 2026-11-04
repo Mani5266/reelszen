@@ -1,14 +1,27 @@
 // Single pricing source (PRD FR-14) — packages page, booking steps + summaries all import this.
+// Rates per Shiva's rate card (Nov 2026). No advance amounts given — adv optional.
 export interface Pkg {
-  id: string; cat: 'weddings' | 'events';
-  name: string; price: number; adv: number; per?: string; custom?: boolean; hot?: boolean;
+  id: string; cat: 'weddings' | 'events' | 'personal' | 'brand';
+  name: string; price: number; adv?: number; custom?: boolean; hot?: boolean;
   blurb: string; feats: string[];
 }
 export const GST = 0.18;
 export const PRICING: Pkg[] = [
-  { id: 'quick', cat: 'events', name: 'Quick Reel — Events', price: 1499, adv: 499, blurb: '1 hour · 1 edited reel · 3 photos · same-day', feats: ['1 hour coverage', '1 edited vertical reel', '3 edited photos', 'Same-day delivery', 'WhatsApp delivery'] },
-  { id: 'half', cat: 'events', name: 'Half Day — Events', price: 4999, adv: 1099, blurb: 'Up to 3 hrs · 2 reels · 10 photos · same-day', feats: ['Up to 3 hours', '2 edited reels', '10 edited photos', 'Same-day delivery', '1 revision'] },
-  { id: 'wed1', cat: 'weddings', hot: true, name: 'Wedding — Single Event', price: 9999, adv: 2499, blurb: '3 reels · raw footage · before event ends', feats: ['3 cinematic reels', 'Raw footage included FREE', 'Edited on-site', 'Delivered before event ends', '1 revision per reel'] }
+  { id: 'wed3', cat: 'weddings', hot: true, name: 'Wedding — 3 Reels', price: 8000, blurb: '3 reels · wedding day', feats: ['3 edited reels', 'Wedding-day shoot', 'Delivered on WhatsApp'] },
+  { id: 'wed5', cat: 'weddings', name: 'Wedding — 5 Reels', price: 12000, blurb: '5 reels · wedding day', feats: ['5 edited reels', 'Wedding-day shoot', 'Delivered on WhatsApp'] },
+  { id: 'wedrc', cat: 'weddings', name: 'Wedding + Reception (3 + 2)', price: 13000, blurb: '3 wedding reels + 2 reception reels', feats: ['3 wedding reels', '2 reception reels', 'Delivered on WhatsApp'] },
+  { id: 'wedall', cat: 'weddings', name: 'Complete Wedding — up to 12 Reels', price: 25000, blurb: 'Full wedding · up to 12 reels', feats: ['Up to 12 edited reels', 'Full wedding coverage', 'Delivered on WhatsApp'] },
+  { id: 'prewed', cat: 'weddings', name: 'Pre-Wedding Shoot', price: 7000, blurb: 'Pre-wedding shoot · edited reels', feats: ['Pre-wedding shoot', 'Edited reels', 'Delivered on WhatsApp'] },
+  { id: 'bday', cat: 'events', name: 'Birthday — 2 Reels', price: 5000, blurb: 'Birthday · 2 edited reels', feats: ['2 edited reels', 'Birthday coverage', 'Delivered on WhatsApp'] },
+  { id: 'events', cat: 'events', custom: true, name: 'Events — Custom', price: 0, blurb: 'Any event — tell us the scope', feats: ['Scope set with you', 'Quote before you book'] },
+  { id: 'brand', cat: 'brand', custom: true, name: 'Brand Shoots — Custom', price: 0, blurb: 'Brand content — tell us the scope', feats: ['Scope set with you', 'Quote before you book'] },
+  { id: 'solo', cat: 'personal', name: 'Solo Reel — 20–25 sec', price: 999, blurb: '20–25 sec solo reel', feats: ['20–25 sec edited reel', 'Solo shoot', 'Delivered on WhatsApp'] },
+  { id: 'solop', cat: 'personal', name: 'Solo Premium Reel', price: 1499, blurb: 'Premium solo reel', feats: ['Premium solo reel', 'Edited', 'Delivered on WhatsApp'] },
+  { id: 'solopp', cat: 'personal', name: 'Solo Premium Reel + Photos', price: 1999, blurb: 'Premium solo reel + photos', feats: ['Premium solo reel', 'Edited photos included', 'Delivered on WhatsApp'] },
+  { id: 'couple', cat: 'personal', name: 'Couple Reel', price: 1999, blurb: 'Couple reel', feats: ['Couple reel', 'Edited', 'Delivered on WhatsApp'] },
+  { id: 'couplep', cat: 'personal', name: 'Premium Couple Reel + Photos', price: 2999, blurb: 'Premium couple reel + photos', feats: ['Premium couple reel', 'Edited photos included', 'Delivered on WhatsApp'] },
+  { id: 'bike', cat: 'personal', name: 'Bike Reel', price: 1500, blurb: 'Bike reel', feats: ['Bike reel', 'Edited', 'Delivered on WhatsApp'] },
+  { id: 'car', cat: 'personal', name: 'Car Reel', price: 1999, blurb: 'Car reel', feats: ['Car reel', 'Edited', 'Delivered on WhatsApp'] },
 ];
 export const inr = (n: number) => 'Rs. ' + Number(n).toLocaleString('en-IN');
 export const WA_NUMBER = '919182667127'; // owner bookings number

@@ -16,7 +16,7 @@ const bookable = PRICING.filter(p => !p.custom);
     </div>
     <p class="text-sm text-char/60 mt-6 mb-3">Pick your package — <b>one price everywhere:</b></p>
     <div class="grid gap-3 sm:grid-cols-2" id="pkgPick">
-      {bookable.map(p => <button data-p={p.id} data-active={p.id==='wed1'} class="pkgbtn text-left border-2 rounded-2xl p-4 bg-white min-h-[64px] border-char/10"><b class="block text-[15px]">{p.name}</b><small class="text-[13px] text-char/60">{p.blurb}</small><span class="block font-extrabold text-[#9a7a2e] mt-1">Rs. {p.price.toLocaleString('en-IN')} · reserve Rs. {p.adv.toLocaleString('en-IN')}</span></button>)}
+      {bookable.map(p => <button data-p={p.id} data-active={p.id==='wed3'} class="pkgbtn text-left border-2 rounded-2xl p-4 bg-white min-h-[64px] border-char/10"><b class="block text-[15px]">{p.name}</b><small class="block text-[13px] text-char/60">{p.blurb}</small><span class="block font-extrabold text-[#9a7a2e] mt-1">Rs. {p.price.toLocaleString('en-IN')}{p.adv ? ` · reserve Rs. ${p.adv.toLocaleString('en-IN')}` : ''}</span></button>)}
     </div>
   </div>
 
@@ -49,9 +49,9 @@ const bookable = PRICING.filter(p => !p.custom);
   <div class="flex gap-3 mt-6"><button id="stepBack" class="px-6 py-3.5 rounded-full border-[1.5px] border-char/15 font-extrabold min-h-[52px] invisible">← Back</button><button id="stepNext" class="btn-cta flex-1 justify-center">Continue →</button></div>
 </div></section>
 <script define:vars={{ bookable }}>
-  let step = 1, selPkg = new URLSearchParams(location.search).get('package') || 'wed1';
+  let step = 1, selPkg = new URLSearchParams(location.search).get('package') || 'wed3';
   let selDate = null, selOcc = 'Wedding';
-  if (!bookable.some(p => p.id === selPkg)) selPkg = 'wed1';
+  if (!bookable.some(p => p.id === selPkg)) selPkg = 'wed3';
   const blocked = JSON.parse(localStorage.getItem('rz_blocked') || '["2026-11-14","2026-12-05"]');
   const $ = s => document.querySelector(s);
   const pkg = () => bookable.find(p => p.id === selPkg);
@@ -112,11 +112,15 @@ const bookable = PRICING.filter(p => !p.custom);
 
   function renderSum() {
     const p = pkg(), gst = Math.round(p.price * 0.18), total = p.price + gst;
-    $('#sumBox').innerHTML = `<div class="flex justify-between py-1.5 text-[14.5px]"><span>${p.name} · ${selOcc} · ${selDate || '—'}</span><b>${inr(p.price)}</b></div><div class="flex justify-between py-1.5 text-[14.5px]"><span>GST (18%)</span><span>${inr(gst)}</span></div><div class="flex justify-between py-2 font-extrabold text-[17px] border-t border-char/10 mt-2 pt-3"><span>Total</span><span>${inr(total)}</span></div><div class="flex justify-between py-1.5 text-[#9a7a2e] font-extrabold"><span>Advance to lock (on confirmation)</span><span>${inr(p.adv)}</span></div><div class="flex justify-between py-1.5 text-[14.5px]"><span>Balance before shoot</span><span>${inr(total - p.adv)}</span></div>`;
+    const advRow = p.adv
+      ? `<div class="flex justify-between py-1.5 text-[#9a7a2e] font-extrabold"><span>Advance to lock (on confirmation)</span><span>${inr(p.adv)}</span></div><div class="flex justify-between py-1.5 text-[14.5px]"><span>Balance before shoot</span><span>${inr(total - p.adv)}</span></div>`
+      : `<div class="flex justify-between py-1.5 text-[#9a7a2e] font-extrabold"><span>Advance to lock</span><span>agreed on WhatsApp</span></div>`;
+    $('#sumBox').innerHTML = `<div class="flex justify-between py-1.5 text-[14.5px]"><span>${p.name} · ${selOcc} · ${selDate || '—'}</span><b>${inr(p.price)}</b></div><div class="flex justify-between py-1.5 text-[14.5px]"><span>GST (18%)</span><span>${inr(gst)}</span></div><div class="flex justify-between py-2 font-extrabold text-[17px] border-t border-char/10 mt-2 pt-3"><span>Total</span><span>${inr(total)}</span></div>${advRow}`;
   }
   function renderReq() {
     const p = pkg(), total = p.price + Math.round(p.price * 0.18);
-    $('#reqSum').innerHTML = `<div class="flex justify-between text-[15px]"><span>Requesting</span><b>${p.name}</b></div><div class="flex justify-between text-sm mt-1"><span>When · where</span><span>${selDate} · ${$('#bVenue').value}</span></div><div class="flex justify-between text-sm mt-1"><span>Estimate total</span><span>${inr(total)} (advance ${inr(p.adv)} on confirmation)</span></div>`;
+    const advNote = p.adv ? `advance ${inr(p.adv)} on confirmation` : 'advance agreed on WhatsApp';
+    $('#reqSum').innerHTML = `<div class="flex justify-between text-[15px]"><span>Requesting</span><b>${p.name}</b></div><div class="flex justify-between text-sm mt-1"><span>When · where</span><span>${selDate} · ${$('#bVenue').value}</span></div><div class="flex justify-between text-sm mt-1"><span>Estimate total</span><span>${inr(total)} (${advNote})</span></div>`;
     $('#reqPane').classList.remove('hidden'); $('#donePane').classList.add('hidden');
   }
   $('#reqBtn').onclick = () => {

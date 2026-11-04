@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Curve from '../components/Curve.astro';
 import { PRICING, inr } from '../data/pricing';
-const teaser = PRICING.filter(p => ['quick','half','wed1'].includes(p.id));
+const teaser = PRICING.filter(p => ['solo','wed3','wedall'].includes(p.id));
 const reels = [
   { t: 'Aishwarya × Aditya', s: 'Wedding · Hyderabad', img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=70&w=500&auto=format&fit=crop' },
   { t: 'Haldi Morning', s: 'Mehendi · Same-day cut', img: 'https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?q=70&w=500&auto=format&fit=crop' },
@@ -12,7 +12,7 @@ const reels = [
   { t: 'Festival Night', s: 'Event · Aftermovie', img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=70&w=500&auto=format&fit=crop' }
 ];
 ---
-<Base title="ReelsZen — Instant Wedding Reel Maker in Hyderabad | Reel Tonight" description="Your wedding reel. Delivered before the celebration ends. Shot on iPhone, edited on-site in Hyderabad. Reels from Rs. 1,499. Book in 3 minutes.">
+<Base title="ReelsZen — Instant Wedding Reel Maker in Hyderabad | Reel Tonight" description="Your wedding reel. Delivered before the celebration ends. Shot on iPhone, edited on-site in Hyderabad. Reels from Rs. 999. Book in 3 minutes.">
 <!-- HERO — Flashoot rhythm, ReelsZen soul: centered cinema, own words, own palette -->
 <section class="sec-fade pt-[140px] sm:pt-[160px] pb-12 relative overflow-hidden text-center" style="background:radial-gradient(800px 380px at 50% -8%,rgba(201,162,75,.16),transparent 65%),radial-gradient(600px 300px at 50% 0%,rgba(240,221,166,.10),transparent 60%),linear-gradient(180deg,#14110B,#0E0D0B 60%,#0E0D0B)">
   <div class="orb-p" data-parallax="0.12" style="width:min(480px,80vw);height:min(480px,80vw);background:rgba(201,162,75,.12);top:-140px;left:-140px" aria-hidden="true"></div>
@@ -159,14 +159,14 @@ const reels = [
         {p.hot && <span class="text-[11px] font-extrabold tracking-wider bg-gradient-to-br from-gold to-marigold text-[#1a1206] px-4 py-1.5 rounded-full self-start -mt-11 mb-3">★ MOST BOOKED</span>}
         <h3 class="font-serif-d text-[22px]">{p.name}</h3>
         <div class="text-4xl font-extrabold tracking-tight mt-2">{inr(p.price)} <small class="text-sm font-semibold text-taupe">+ GST</small></div>
-        <div class:list={['adv', p.hot && 'adv-hot']}>Reserve today: <b>{inr(p.adv)}</b></div>
+        {p.adv && <div class:list={['adv', p.hot && 'adv-hot']}>Reserve today: <b>{inr(p.adv)}</b></div>}
         <p class="text-[11px] font-extrabold tracking-[2px] uppercase text-taupe mt-4 mb-1">What's included:</p>
         <ul class="mb-4 flex-1">{p.feats.map(f => <li class="text-sm py-2 pl-7 relative border-b border-dashed border-char/10">✓ {f}</li>)}</ul>
         <a href="/book" class="btn-cta justify-center w-full">Book Your Date →</a>
       </div>
     ))}
   </div>
-  <div class="text-center mt-7"><a href="/packages" class="font-extrabold text-sm underline decoration-gold decoration-2 underline-offset-4">See all 7 plans + add-ons →</a></div>
+  <div class="text-center mt-7"><a href="/packages" class="font-extrabold text-sm underline decoration-gold decoration-2 underline-offset-4">See all 15 plans →</a></div>
 </div></section>
 
 <!-- LOVE NOTES — story cards, real reviews only -->
