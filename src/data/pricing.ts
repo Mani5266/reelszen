@@ -5,7 +5,6 @@ export interface Pkg {
   name: string; price: number; adv?: number; custom?: boolean; hot?: boolean;
   blurb: string; feats: string[];
 }
-export const GST = 0.18;
 export const PRICING: Pkg[] = [
   { id: 'wed3', cat: 'weddings', hot: true, name: 'Wedding — 3 Reels', price: 7999, blurb: '3 reels · wedding day', feats: ['3 edited reels', 'Wedding-day shoot', 'Delivered on WhatsApp'] },
   { id: 'wed5', cat: 'weddings', name: 'Wedding — 5 Reels', price: 11999, blurb: '5 reels · wedding day', feats: ['5 edited reels', 'Wedding-day shoot', 'Delivered on WhatsApp'] },
