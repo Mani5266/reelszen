@@ -4,12 +4,10 @@ import Curve from '../components/Curve.astro';
 import { PRICING, inr } from '../data/pricing';
 const teaser = PRICING.filter(p => ['solo','solop','couple'].includes(p.id));
 const reels = [
-  { t: 'Aishwarya × Aditya', s: 'Wedding · Hyderabad', img: 'https://images.pexels.com/photos/32325264/pexels-photo-32325264.jpeg?auto=compress&cs=tinysrgb&w=500' },
-  { t: 'Haldi Morning', s: 'Mehendi · Same-day cut', img: 'https://images.pexels.com/photos/33885293/pexels-photo-33885293.jpeg?auto=compress&cs=tinysrgb&w=500' },
-  { t: 'Sangeet Night', s: 'Delivered same night', img: 'https://images.pexels.com/photos/37045023/pexels-photo-37045023.jpeg?auto=compress&cs=tinysrgb&w=500' },
-  { t: 'Meher & Kabir', s: 'Wedding · Kompally', img: 'https://images.pexels.com/photos/30184675/pexels-photo-30184675.jpeg?auto=compress&cs=tinysrgb&w=500' },
-  { t: 'Mehendi Hands', s: 'Henna · Pre-wedding', img: 'https://images.pexels.com/photos/39440951/pexels-photo-39440951.jpeg?auto=compress&cs=tinysrgb&w=500' },
-  { t: 'Festival Night', s: 'Event · Aftermovie', img: 'https://images.pexels.com/photos/30214766/pexels-photo-30214766.jpeg?auto=compress&cs=tinysrgb&w=500' }
+  { t: 'Aishwarya × Aditya', s: 'Wedding · Hyderabad', img: '/images/Marriage.jpg' },
+  { t: 'Haldi Morning', s: 'Mehendi · Same-day cut', img: '/images/Haldi.jpg' },
+  { t: 'Sangeet Night', s: 'Delivered same night', img: '/images/sangeeth.jpg' },
+  { t: 'Mehendi Hands', s: 'Henna · Pre-wedding', img: '/images/mehendi.jpg' }
 ];
 ---
 <Base title="ReelsZen — Instant Wedding Reel Maker in Hyderabad | Reel Tonight" description="Your wedding reel. Delivered before the celebration ends. Shot on iPhone, edited on-site in Hyderabad. Reels from Rs. 999. Book in 3 minutes.">
