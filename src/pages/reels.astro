@@ -1,12 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 const reels = [
-  ['Aishwarya × Aditya','Wedding · Hyderabad','photo-1583939003579-730e3918a45a'],
-  ['Haldi Morning','Mehendi · Same-day','photo-1610173826608-bd1f53a52db1'],
-  ['Sangeet Night','Same night delivery','photo-1519741497674-611481863552'],
-  ['Meher & Kabir','Wedding · Kompally','photo-1606800052052-a08af7148866'],
-  ['Boutique Launch','Brand · Jubilee Hills','photo-1441986300917-64674bd600d8'],
-  ['Festival Night','Event · Aftermovie','photo-1492684223066-81342ee5ff30']
+  ['Aishwarya × Aditya','Wedding · Hyderabad','https://images.pexels.com/photos/32325264/pexels-photo-32325264.jpeg?auto=compress&cs=tinysrgb&w=500'],
+  ['Haldi Morning','Mehendi · Same-day','https://images.pexels.com/photos/33885293/pexels-photo-33885293.jpeg?auto=compress&cs=tinysrgb&w=500'],
+  ['Sangeet Night','Same night delivery','https://images.pexels.com/photos/37045023/pexels-photo-37045023.jpeg?auto=compress&cs=tinysrgb&w=500'],
+  ['Meher & Kabir','Wedding · Kompally','https://images.pexels.com/photos/30184675/pexels-photo-30184675.jpeg?auto=compress&cs=tinysrgb&w=500'],
+  ['Mehendi Hands','Henna · Pre-wedding','https://images.pexels.com/photos/39440951/pexels-photo-39440951.jpeg?auto=compress&cs=tinysrgb&w=500'],
+  ['Festival Night','Event · Aftermovie','https://images.pexels.com/photos/30214766/pexels-photo-30214766.jpeg?auto=compress&cs=tinysrgb&w=500']
 ];
 ---
 <Base title="Portfolio Reels — ReelsZen Hyderabad | Real work, same-day cuts" description="Permission-cleared 9:16 reels: weddings, haldi, brands. Real proof, playing here.">
@@ -17,7 +17,7 @@ const reels = [
   <div class="grid grid-cols-2 md:grid-cols-3 gap-3.5 md:gap-5 mt-8">
     {reels.map(([t, s, id]) => (
       <div class="relative rounded-[20px] overflow-hidden aspect-[9/14] border border-white/10 bg-[#1c1915]">
-        <img src={`https://images.unsplash.com/${id}?q=70&w=500&auto=format&fit=crop`} alt={t} loading="lazy" decoding="async" class="w-full h-full object-cover" width="500" height="778" />
+        <img src={id} alt={t} loading="lazy" decoding="async" class="w-full h-full object-cover" width="500" height="778" />
         <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))"></div>
         <div class="absolute bottom-3 inset-x-3 flex justify-between items-center gap-2"><small class="text-white text-xs font-bold">{t}<br /><span class="opacity-70 font-normal">{s}</span></small><a href="/book" class="text-xs font-extrabold bg-white/15 border border-white/30 text-white px-3.5 py-2 rounded-full">Book →</a></div>
       </div>
