@@ -17,9 +17,9 @@ export const PRICING: Pkg[] = [
   { id: 'brand', cat: 'brand', custom: true, name: 'Brand Shoots — Custom', price: 0, blurb: 'Brand content — tell us the scope', feats: ['Scope set with you', 'Quote before you book'] },
   { id: 'solo', cat: 'personal', name: 'Solo Reel — 20–25 sec', price: 999, blurb: '20–25 sec solo reel', feats: ['20–25 sec edited reel', 'Solo shoot', 'Delivered on WhatsApp'] },
   { id: 'solop', cat: 'personal', name: 'Solo Premium Reel', price: 1499, blurb: 'Premium solo reel', feats: ['Premium solo reel', 'Edited', 'Delivered on WhatsApp'] },
-  { id: 'solopp', cat: 'personal', name: 'Solo Premium Reel + Photos', price: 1999, blurb: 'Premium solo reel + photos', feats: ['Premium solo reel', 'Edited photos included', 'Delivered on WhatsApp'] },
+  { id: 'solopp', cat: 'personal', name: 'Solo Premium Reel + Photos', price: 1999, blurb: 'Premium solo reel + photos', feats: ['Premium solo reel', 'Photos included', 'Delivered on WhatsApp'] },
   { id: 'couple', cat: 'personal', name: 'Couple Reel', price: 1999, blurb: 'Couple reel', feats: ['Couple reel', 'Edited', 'Delivered on WhatsApp'] },
-  { id: 'couplep', cat: 'personal', name: 'Premium Couple Reel + Photos', price: 2999, blurb: 'Premium couple reel + photos', feats: ['Premium couple reel', 'Edited photos included', 'Delivered on WhatsApp'] },
+  { id: 'couplep', cat: 'personal', name: 'Premium Couple Reel + Photos', price: 2999, blurb: 'Premium couple reel + photos', feats: ['Premium couple reel', 'Photos included', 'Delivered on WhatsApp'] },
   { id: 'bike', cat: 'personal', name: 'Bike Reel', price: 1499, blurb: 'Bike reel', feats: ['Bike reel', 'Edited', 'Delivered on WhatsApp'] },
   { id: 'car', cat: 'personal', name: 'Car Reel', price: 1999, blurb: 'Car reel', feats: ['Car reel', 'Edited', 'Delivered on WhatsApp'] },
 ];
