@@ -28,11 +28,11 @@ const reels = [
   </div>
   <div class="max-w-4xl mx-auto px-5 mt-12 text-left" style="perspective:1400px">
       <div id="heroCar" class="flex gap-4 sm:gap-5 overflow-x-auto pb-6 pt-2 px-[calc(11vw-20px)] sm:px-[calc(50%-110px)] justify-start" style="scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;transform-style:preserve-3d">
-        {[0,1,2,3,4,5].map((n) => (
+        {reels.map((r, n) => (
           <div class="hero-slide relative rounded-[22px] overflow-hidden aspect-[9/16] border border-white/10 shadow-2xl flex-none w-[78vw] max-w-[360px] sm:w-[220px] sm:max-w-none" style="scroll-snap-align:center;will-change:transform;transition:border-color .35s">
-            <img src={reels[n].img} alt={reels[n].t} fetchpriority={n === 0 ? 'high' : undefined} loading={n === 0 ? 'eager' : 'lazy'} decoding="async" class="w-full h-full object-cover" width="500" height="889" />
+            <img src={r.img} alt={r.t} fetchpriority={n === 0 ? 'high' : undefined} loading={n === 0 ? 'eager' : 'lazy'} decoding="async" class="w-full h-full object-cover" width="500" height="889" />
             <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.72))"></div>
-            <div class="absolute bottom-0 p-3.5 text-white"><b class="text-[13.5px] block">{reels[n].t}</b><small class="text-[11.5px] opacity-80">{reels[n].s}</small></div>
+            <div class="absolute bottom-0 p-3.5 text-white"><b class="text-[13.5px] block">{r.t}</b><small class="text-[11.5px] opacity-80">{r.s}</small></div>
           </div>
         ))}
       </div>
